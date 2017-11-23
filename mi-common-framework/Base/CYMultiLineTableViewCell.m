@@ -67,7 +67,6 @@
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
     CYWebViewController *webViewController = [[CYWebViewController alloc] initWithObject:url.absoluteString delegate:nil];
-    webViewController.toolbarHidden = YES;
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
