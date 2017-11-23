@@ -12,8 +12,6 @@
 #import "CYConstants.h"
 #import "CYTypeDefine.h"
 
-#import "CYViewControllerEventProtocol.h"
-
 /**
  *  Base
  */
@@ -32,7 +30,6 @@
 #import "UIColor+CYAdditions.h"
 #import "UILabel+CYAddtions.h"
 #import "NSString+CYAdditions.h"
-#import "NSArray+CYAdditions.h"
 #import "UIAlertView+CYBlock.h"
 #import "UIScreen+CYScreenshot.h"
 #import "MBProgressHUD+CYConvenience.h"
