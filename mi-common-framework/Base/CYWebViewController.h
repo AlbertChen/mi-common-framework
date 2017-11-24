@@ -35,8 +35,10 @@
 - (void)displayObject:(id<CYWebViewController>)object;
 - (void)adjustTextSize:(NSInteger)textSize;
 
+@property (nonatomic, assign) CGFloat bottomMargin;
 @property (nonatomic, strong, readonly) UIWebView *webView;
 @property (nonatomic, strong, readonly) NJKWebViewProgress *progressProxy;
+
 
 - (void)showPhotoBrowserWithURL:(NSURL *)URL;
 

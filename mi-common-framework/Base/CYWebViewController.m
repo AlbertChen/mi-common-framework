@@ -28,6 +28,14 @@
 
 #pragma mark - Properties
 
+- (void)setBottomMargin:(CGFloat)bottomMargin {
+    _bottomMargin = bottomMargin;
+    
+    if (self.webViewBottomLC.constant != 0.0) {
+        self.webViewBottomLC.constant = bottomMargin;
+    }
+}
+
 - (UIWebView *)webView {
     if (_webView == nil) {
         _webView = [[UIWebView alloc] initWithFrame:CGRectZero];
@@ -109,8 +117,8 @@
 
 - (void)setupViewConstraints {
     NSDictionary *views = @{@"webView": self.webView};
-    NSDictionary *metrics = nil;
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[webView]-(0)-|" options:0 metrics:metrics views:views]];
+    NSDictionary *metrics = @{@"bottomMargin": @(self.bottomMargin)};
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[webView]-(bottomMargin)-|" options:0 metrics:metrics views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|" options:0 metrics:metrics views:views]];
     
     self.webViewBottomLC = [self.view constraintForAttribute:NSLayoutAttributeBottom firstItem:self.view secondItem:self.webView];
