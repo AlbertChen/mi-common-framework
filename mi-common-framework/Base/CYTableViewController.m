@@ -141,6 +141,10 @@
         if (cachedData.count > 0) {
             [self.paginator insertCustomObjects:cachedData appending:NO];
             [self updateDataSource];
+            
+            if (self.stateView.state == CYStateViewStateEmpty || self.stateView.state == CYStateViewStateError) {
+                self.stateView.state = CYStateViewStateNone;
+            }
         }
     }
     
