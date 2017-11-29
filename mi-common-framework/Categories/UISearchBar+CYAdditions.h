@@ -11,5 +11,6 @@
 @interface UISearchBar (CYAdditions)
 
 @property (nonatomic, readonly) UITextField *textField;
+@property (nonatomic, readonly) UIButton *cancelButton;
 
 @end

@@ -32,4 +32,9 @@
     return textField;
 }
 
+- (UIButton *)cancelButton {
+    UIButton *cancelButton = [self valueForKey:@"_cancelButton"];
+    return cancelButton;
+}
+
 @end
