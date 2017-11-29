@@ -209,10 +209,6 @@
 - (void)updateDataSource {
     [self.paginator refreshConstObjects];
     [self.tableView reloadData];
-    
-    if ((self.stateView.state == CYStateViewStateEmpty || self.stateView.state == CYStateViewStateError) && self.paginator.constObjects.count > 0) {
-        self.stateView.state = CYStateViewStateNone;
-    }
 }
 
 #pragma mark - CYDataPaginatorDelegate
