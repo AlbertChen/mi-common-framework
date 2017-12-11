@@ -9,9 +9,8 @@
 #import "CYViewController.h"
 #import "SVPullToRefresh.h"
 #import "CYDataPaginator.h"
-#import "MGSwipeTableCell.h"
 
-@interface CYTableViewController : CYViewController <UITableViewDataSource, UITableViewDelegate, CYDataPaginatorDelegate, MGSwipeTableCellDelegate>
+@interface CYTableViewController : CYViewController <UITableViewDataSource, UITableViewDelegate, CYDataPaginatorDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 

@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) NSTimer *autoSlideTimer;
 @property (nonatomic, assign, readonly) NSUInteger numberOfImages;
-
+@property (nonatomic, assign) IBInspectable CYImageInfiniteSlideViewPageControlPosition pageControlPosition;
 
 @end
 
@@ -99,11 +99,21 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithFrame:(CGRect)frame dataSource:(id<CYImageInfiniteSlideViewDataSource>)dataSource delegate:(id<CYImageInfiniteSlideViewDelegate>)delegate {
+- (instancetype)initWithFrame:(CGRect)frame
+                   dataSource:(id<CYImageInfiniteSlideViewDataSource>)dataSource
+                     delegate:(id<CYImageInfiniteSlideViewDelegate>)delegate {
+    return [self initWithFrame:frame pageControlPosition:CYImageInfiniteSlideViewPageControlPositionRight dataSource:dataSource delegate:delegate];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+          pageControlPosition:(CYImageInfiniteSlideViewPageControlPosition)pageControlPosition
+                   dataSource:(id<CYImageInfiniteSlideViewDataSource>)dataSource
+                     delegate:(id<CYImageInfiniteSlideViewDelegate>)delegate {
     self = [super initWithFrame:frame];
     if (self != nil) {
         _dataSource = dataSource;
         _delegate = delegate;
+        _pageControlPosition = pageControlPosition;
         
         [self commonInit];
     }
@@ -149,11 +159,20 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[captionView]|" options:0 metrics:metrics views:views]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[captionView(captionHeight)]|" options:0 metrics:metrics views:views]];
     
-    [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(captionLeftMargin)-[captionLabel]-(2)-[pageControl]-(8)-|" options:0 metrics:metrics views:views]];
-    [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[captionLabel]|" options:0 metrics:metrics views:views]];
-    [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[pageControl]|" options:0 metrics:metrics views:views]];
-    
-    [self.pageControl setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    if (self.pageControlPosition == CYImageInfiniteSlideViewPageControlPositionRight) {
+        [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(captionLeftMargin)-[captionLabel]-(2)-[pageControl]-(8)-|" options:0 metrics:metrics views:views]];
+        [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[captionLabel]|" options:0 metrics:metrics views:views]];
+        [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[pageControl]|" options:0 metrics:metrics views:views]];
+        
+        [self.pageControl setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    } else {
+        [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(captionLeftMargin)-[captionLabel]-|" options:0 metrics:metrics views:views]];
+        [self.captionView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[captionLabel]|" options:0 metrics:metrics views:views]];
+        
+        NSLayoutConstraint *centerXConstraint = [NSLayoutConstraint constraintWithItem:self.pageControl attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.captionView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
+        NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:self.pageControl attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.captionView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+        [self.captionView addConstraints:@[centerXConstraint, centerYConstraint]];
+    }
 }
 
 #pragma mark - Actions

@@ -136,8 +136,6 @@
 		DE52E3EB1D01847B00907DDA /* UIScrollView+SVInfiniteScrolling.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5F92361CCDAC3F009BECBF /* UIScrollView+SVInfiniteScrolling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE52E3EC1D01847B00907DDA /* UIScrollView+SVPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5F92381CCDAC3F009BECBF /* UIScrollView+SVPullToRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE52E3ED1D01847B00907DDA /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2515AA1CF29E75000825BD /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE52E3EE1D01847B00907DDA /* MGSwipeButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DE7C9F151CFE7EB100DCF6D1 /* MGSwipeButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE52E3EF1D01847B00907DDA /* MGSwipeTableCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DE7C9F171CFE7EB100DCF6D1 /* MGSwipeTableCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5644FA1D6A8F840066EE68 /* CYImagePickerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5644F81D6A8F840066EE68 /* CYImagePickerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5644FB1D6A8F840066EE68 /* CYImagePickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5644F91D6A8F840066EE68 /* CYImagePickerManager.m */; };
 		DE5A76331F7394EC0038AFF1 /* UISearchBar+CYAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5A76311F7394EC0038AFF1 /* UISearchBar+CYAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -224,8 +222,6 @@
 		DE7A38211D6C3FCE00393FC8 /* CYImageBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A381C1D6C3FCE00393FC8 /* CYImageBrowserViewController.m */; };
 		DE7A38221D6C3FCE00393FC8 /* CYImageDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE7A381E1D6C3FCE00393FC8 /* CYImageDisplayView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE7A38231D6C3FCE00393FC8 /* CYImageDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A381F1D6C3FCE00393FC8 /* CYImageDisplayView.m */; };
-		DE7C9F191CFE7EB100DCF6D1 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7C9F161CFE7EB100DCF6D1 /* MGSwipeButton.m */; };
-		DE7C9F1A1CFE7EB100DCF6D1 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7C9F181CFE7EB100DCF6D1 /* MGSwipeTableCell.m */; };
 		DE8CAB851D581F7E00CCD5AE /* CYKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8CAB7F1D581F7E00CCD5AE /* CYKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE8CAB861D581F7E00CCD5AE /* CYKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8CAB801D581F7E00CCD5AE /* CYKeychain.m */; };
 		DE8CAB871D581F7E00CCD5AE /* NSData+CYEncrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8CAB811D581F7E00CCD5AE /* NSData+CYEncrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -258,6 +254,8 @@
 		DED881601D7D7B610013B409 /* CYMultiLineInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8815A1D7D7B610013B409 /* CYMultiLineInputTableViewCell.m */; };
 		DED881611D7D7B610013B409 /* CYTableInputViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DED8815B1D7D7B610013B409 /* CYTableInputViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DED881621D7D7B610013B409 /* CYTableInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8815C1D7D7B610013B409 /* CYTableInputViewController.m */; };
+		DEFF037D1FDA662500309A0C /* CYCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEFF037E1FDA662500309A0C /* CYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF037C1FDA662500309A0C /* CYCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -494,10 +492,6 @@
 		DE7A381C1D6C3FCE00393FC8 /* CYImageBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYImageBrowserViewController.m; sourceTree = "<group>"; };
 		DE7A381E1D6C3FCE00393FC8 /* CYImageDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYImageDisplayView.h; sourceTree = "<group>"; };
 		DE7A381F1D6C3FCE00393FC8 /* CYImageDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYImageDisplayView.m; sourceTree = "<group>"; };
-		DE7C9F151CFE7EB100DCF6D1 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
-		DE7C9F161CFE7EB100DCF6D1 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = MGSwipeButton.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		DE7C9F171CFE7EB100DCF6D1 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
-		DE7C9F181CFE7EB100DCF6D1 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		DE7C9F1C1CFE88E100DCF6D1 /* mi-common-framework-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "mi-common-framework-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DE7C9F1D1CFE88F600DCF6D1 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		DE8CAB7F1D581F7E00CCD5AE /* CYKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYKeychain.h; sourceTree = "<group>"; };
@@ -533,6 +527,8 @@
 		DED8815A1D7D7B610013B409 /* CYMultiLineInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CYMultiLineInputTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DED8815B1D7D7B610013B409 /* CYTableInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTableInputViewController.h; sourceTree = "<group>"; };
 		DED8815C1D7D7B610013B409 /* CYTableInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTableInputViewController.m; sourceTree = "<group>"; };
+		DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYCollectionViewCell.h; sourceTree = "<group>"; };
+		DEFF037C1FDA662500309A0C /* CYCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -681,6 +677,8 @@
 				DE5F91821CCDAC3F009BECBF /* CYTableViewCell.m */,
 				DE764AEA1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.h */,
 				DE764AEB1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.m */,
+				DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */,
+				DEFF037C1FDA662500309A0C /* CYCollectionViewCell.m */,
 				DE5F91851CCDAC3F009BECBF /* CYViewController.h */,
 				DE5F91861CCDAC3F009BECBF /* CYViewController.m */,
 				DE5F917E1CCDAC3F009BECBF /* CYDataPaginator.h */,
@@ -777,7 +775,6 @@
 				DE5061D41D631CE900CC3445 /* SZTextView */,
 				DE2515A81CF29E75000825BD /* Reachability */,
 				DE4E8DD21DBF08290067D2F1 /* RequestEncoding */,
-				DE7C9F131CFE7EB100DCF6D1 /* MGSwipeTableCell */,
 				DE764AE51D6FEFF9003CD9CE /* TTTAttributedLabel */,
 				DEA7B71D1F04A945000AF58A /* NJKWebViewProgress */,
 			);
@@ -1077,17 +1074,6 @@
 			path = ImageDisplay;
 			sourceTree = "<group>";
 		};
-		DE7C9F131CFE7EB100DCF6D1 /* MGSwipeTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				DE7C9F151CFE7EB100DCF6D1 /* MGSwipeButton.h */,
-				DE7C9F161CFE7EB100DCF6D1 /* MGSwipeButton.m */,
-				DE7C9F171CFE7EB100DCF6D1 /* MGSwipeTableCell.h */,
-				DE7C9F181CFE7EB100DCF6D1 /* MGSwipeTableCell.m */,
-			);
-			path = MGSwipeTableCell;
-			sourceTree = "<group>";
-		};
 		DE7C9F1B1CFE88A200DCF6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,8 +1221,6 @@
 				DE52E3EB1D01847B00907DDA /* UIScrollView+SVInfiniteScrolling.h in Headers */,
 				DE52E3EC1D01847B00907DDA /* UIScrollView+SVPullToRefresh.h in Headers */,
 				DE52E3ED1D01847B00907DDA /* Reachability.h in Headers */,
-				DE52E3EE1D01847B00907DDA /* MGSwipeButton.h in Headers */,
-				DE52E3EF1D01847B00907DDA /* MGSwipeTableCell.h in Headers */,
 				DE52E3B31D01845D00907DDA /* AFHTTPSessionManager.h in Headers */,
 				DE52E3B41D01845D00907DDA /* AFNetworking.h in Headers */,
 				DE52E3B51D01845D00907DDA /* AFNetworkReachabilityManager.h in Headers */,
@@ -1295,6 +1279,7 @@
 				DED881611D7D7B610013B409 /* CYTableInputViewController.h in Headers */,
 				DE4233D91F790CCA008DD06D /* CYExpandedView.h in Headers */,
 				DEC1E43E1EB1FA4200A92989 /* CYImageInfiniteSlideView.h in Headers */,
+				DEFF037D1FDA662500309A0C /* CYCollectionViewCell.h in Headers */,
 				DEA6D4D71EB9C44F00E0BCCD /* UIScreen+CYScreenshot.h in Headers */,
 				DE764AE81D6FEFF9003CD9CE /* TTTAttributedLabel.h in Headers */,
 				DE764AEC1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.h in Headers */,
@@ -1437,7 +1422,6 @@
 				DE5F92571CCDAC3F009BECBF /* AFImageDownloader.m in Sources */,
 				DE5F923C1CCDAC3F009BECBF /* CYTableViewCell.m in Sources */,
 				DE5F92621CCDAC3F009BECBF /* DDASLLogger.m in Sources */,
-				DE7C9F191CFE7EB100DCF6D1 /* MGSwipeButton.m in Sources */,
 				DEA7B7231F04A945000AF58A /* NJKWebViewProgress.m in Sources */,
 				DE5F92581CCDAC3F009BECBF /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE5F927C1CCDAC3F009BECBF /* SDWebImagePrefetcher.m in Sources */,
@@ -1455,7 +1439,6 @@
 				DE5F92771CCDAC3F009BECBF /* SDWebImageCompat.m in Sources */,
 				DE2515A71CF29A04000825BD /* CYStateView.m in Sources */,
 				DE5061D81D631CE900CC3445 /* SZTextView.m in Sources */,
-				DE7C9F1A1CFE7EB100DCF6D1 /* MGSwipeTableCell.m in Sources */,
 				DE5F92721CCDAC3F009BECBF /* MBProgressHUD.m in Sources */,
 				DE5F923F1CCDAC3F009BECBF /* CYWebViewController.m in Sources */,
 				DE5F92611CCDAC3F009BECBF /* DDASLLogCapture.m in Sources */,
@@ -1489,6 +1472,7 @@
 				DE2515B11CF2A077000825BD /* Reachability+CYAdditions.m in Sources */,
 				DE5F926E1CCDAC3F009BECBF /* FMDatabaseQueue.m in Sources */,
 				DE764AE91D6FEFF9003CD9CE /* TTTAttributedLabel.m in Sources */,
+				DEFF037E1FDA662500309A0C /* CYCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

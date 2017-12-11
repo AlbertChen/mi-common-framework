@@ -8,11 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CYImageInfiniteSlideViewPageControlPosition) {
+    CYImageInfiniteSlideViewPageControlPositionRight,
+    CYImageInfiniteSlideViewPageControlPositionCenter
+};
+
 @protocol CYImageInfiniteSlideViewDataSource, CYImageInfiniteSlideViewDelegate;
 
 @interface CYImageInfiniteSlideView : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame dataSource:(id<CYImageInfiniteSlideViewDataSource>)dataSource delegate:(id<CYImageInfiniteSlideViewDelegate>)delegate;
+- (instancetype)initWithFrame:(CGRect)frame
+                   dataSource:(id<CYImageInfiniteSlideViewDataSource>)dataSource
+                     delegate:(id<CYImageInfiniteSlideViewDelegate>)delegate;
+- (instancetype)initWithFrame:(CGRect)frame
+          pageControlPosition:(CYImageInfiniteSlideViewPageControlPosition)pageControlPosition
+                   dataSource:(id<CYImageInfiniteSlideViewDataSource>)dataSource
+                     delegate:(id<CYImageInfiniteSlideViewDelegate>)delegate;
 
 @property (nonatomic, weak) IBOutlet id<CYImageInfiniteSlideViewDataSource> dataSource;
 @property (nonatomic, weak) IBOutlet id<CYImageInfiniteSlideViewDelegate> delegate;

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
-#import "MGSwipeTableCell.h"
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, CYTableViewCellPosition) {
     CYTableViewCellPositionAlone = 0,
@@ -15,9 +15,18 @@ typedef NS_ENUM(NSInteger, CYTableViewCellPosition) {
     CYTableViewCellPositionBottom
 };
 
-@interface CYTableViewCell : MGSwipeTableCell
+@interface CYTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) id content;
+
+- (void)setContentWidth:(CGFloat)contentWidth;
 
 + (CGFloat)cellHeight;
++ (CGFloat)cellHeightWithFixedRatio:(BOOL)fixedRatio;
+
++ (CGFloat)fittingHeight;
++ (CGFloat)fittingHeightWithContent:(id)content;
+
 + (NSString *)cellIdentifier;
 
 @property (nonatomic, assign) CYTableViewCellPosition position;
