@@ -54,20 +54,18 @@ static UIWindow *CYAlertWindow;
 
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
-                                     animated:(BOOL)animated
-                                   completion:(void (^)(void))completion {
-    return [self showFromViewController:viewController preferredStyle:preferredStyle animated:animated maskColor:nil completion:completion];
+                                     animated:(BOOL)animated {
+    return [self showFromViewController:viewController preferredStyle:preferredStyle animated:animated maskColor:nil];
 }
 
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
                                      animated:(BOOL)animated
-                                    maskColor:(UIColor *)maskColor
-                                   completion:(void (^)(void))completion {
+                                    maskColor:(UIColor *)maskColor {
     CYAlertController *alertController = [CYAlertController alertControllerWithCustomView:self preferredStyle:preferredStyle];
     alertController.maskColor = maskColor;
     alertController.offsetCenterY = self.offsetCenterY;
-    [alertController presentFromViewController:viewController animated:animated completion:completion];
+    [alertController presentFromViewController:viewController animated:animated completion:NULL];
     self.alertController = alertController;
     
     return alertController;

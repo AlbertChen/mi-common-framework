@@ -43,13 +43,11 @@ typedef NS_ENUM(NSInteger, CYAlertControllerStyle) {
 
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
-                                     animated:(BOOL)animated
-                                   completion:(void (^)(void))completion;
+                                     animated:(BOOL)animated;
 - (CYAlertController *)showFromViewController:(UIViewController *)viewController
                                preferredStyle:(CYAlertControllerStyle)preferredStyle
                                      animated:(BOOL)animated
-                                    maskColor:(UIColor *)maskColor
-                                   completion:(void (^)(void))completion;
+                                    maskColor:(UIColor *)maskColor;
 - (void)hide:(BOOL)animated;
 
 @end
