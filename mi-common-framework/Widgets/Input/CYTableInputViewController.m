@@ -22,7 +22,6 @@
     self.observerForKeyboard = YES;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
