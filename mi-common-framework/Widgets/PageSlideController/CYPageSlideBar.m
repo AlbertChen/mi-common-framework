@@ -85,7 +85,7 @@
             frame.origin.y = selectedButton.frame.size.height - frame.size.height;
             frame.size.width = selectedButton.frame.size.width;
             self.indicatorView.frame = frame;
-            self.indicatorView.backgroundColor = selectedItem.selectedTitleColor != nil ? selectedItem.selectedTitleColor : self.tintColor;
+//            self.indicatorView.backgroundColor = selectedItem.selectedTitleColor != nil ? selectedItem.selectedTitleColor : self.tintColor;
             
             if (self.layoutStyle == CYPageSlideBarLayoutStyleNormal) {
                 CGFloat offsetX = 0.0;

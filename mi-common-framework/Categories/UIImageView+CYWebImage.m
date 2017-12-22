@@ -48,6 +48,10 @@ static BOOL _downloadImageInWifiOnly = NO;
 - (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletionBlock)completedBlock {
     NSString *newURLString = [urlString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSURL *url = [NSURL URLWithString:newURLString];
+    if (url == nil) {
+        newURLString = [newURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        url = [NSURL URLWithString:newURLString];
+    }
     if (_downloadImageInWifiOnly && !isWIFIReachable()) {
         NSString *cacheKey = [SDWebImageManager.sharedManager cacheKeyForURL:url];
         UIImage *cacheImage = [SDWebImageManager.sharedManager.imageCache imageFromDiskCacheForKey:cacheKey];
