@@ -11,6 +11,7 @@
 
 @interface NSDictionary (CYAdditions)
 
++ (instancetype)dictionaryWithString:(NSString *)string;
 + (instancetype)dictionaryWithDataModel:(CYDataModel *)dataModel;
 
 @end
