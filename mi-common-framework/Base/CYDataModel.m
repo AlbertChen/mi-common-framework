@@ -35,6 +35,8 @@
 }
 
 + (NSArray *)objectsWithAttribuesArray:(NSArray *)attributesArray {
+    if ([attributesArray isEqual:[NSNull null]] || ![attributesArray isKindOfClass:[NSArray class]]) return nil;
+    
     NSMutableArray *objects = [NSMutableArray arrayWithCapacity:0];
     for (NSDictionary *attributes in attributesArray) {
         id model = [[[self class] alloc] initWithAttributes:attributes];
@@ -45,7 +47,7 @@
 }
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes {
-    if (attributes == nil || ![attributes isKindOfClass:[NSDictionary class]]) return nil;
+    if ([attributes isEqual:[NSNull null]] || ![attributes isKindOfClass:[NSDictionary class]]) return nil;
     
     self = [super init];
     if (self != nil) {
