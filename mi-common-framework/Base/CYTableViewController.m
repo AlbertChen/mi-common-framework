@@ -232,8 +232,6 @@
     }
     
     if (self.pullLoadMoreEnabled) {
-        self.tableView.showsInfiniteScrolling = self.tableView.contentSize.height > self.tableView.bounds.size.height;
-        
         [self.tableView.infiniteScrollingView stopAnimating];
         if ([self.paginator hasMore]) {
             self.tableView.infiniteScrollingView.enabled = YES;
@@ -246,6 +244,10 @@
                 self.noMoreDataLabel.alpha = 1.0;
             }];
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.tableView.showsInfiniteScrolling = self.tableView.contentSize.height > self.tableView.bounds.size.height;
+        })
     }
 }
 
