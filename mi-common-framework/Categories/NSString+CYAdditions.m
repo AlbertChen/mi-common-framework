@@ -11,7 +11,7 @@
 @implementation NSString (CYAdditions)
 
 + (BOOL)isEmpty:(NSString *)string {
-    return [string isEqual:[NSNull null]] || string == nil || [string isEqualToString:@""];
+    return [string isEqual:[NSNull null]] || string == nil || [string isEqualToString:@""] || [string isEqualToString:@"null"];
 }
 
 - (BOOL)isMatchedRegExp:(NSString *)regExp {
