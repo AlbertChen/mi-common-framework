@@ -17,6 +17,9 @@
 + (instancetype)showHUDWithMessage:(NSString *)message view:(UIView *)view offset:(CGPoint)offset;
 + (instancetype)showHUDWithMessage:(NSString *)message view:(UIView *)view autoHide:(BOOL)autoHide;
 
++ (instancetype)showHUDWithImage:(id)image message:(NSString *)message;
++ (instancetype)showHUDWithImage:(id)image message:(NSString *)message view:(UIView *)view;
+
 - (void)updateHUDMessage:(NSString *)message;
 - (void)updateHUDMessage:(NSString *)message autoHide:(BOOL)autoHide;
 

@@ -59,6 +59,30 @@
     return hud;
 }
 
++ (instancetype)showHUDWithImage:(id)image message:(NSString *)message {
+    return [[self class] showHUDWithImage:image message:message view:[UIApplication sharedApplication].keyWindow];
+}
+
++ (instancetype)showHUDWithImage:(id)image message:(NSString *)message view:(UIView *)view {
+    if ([image isKindOfClass:[NSString class]]) {
+        image = [UIImage imageNamed:image];
+    }
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.margin = HUD_CONTENT_MARGIN;
+    hud.contentColor = HUD_CONTENT_COLOR;
+    hud.bezelView.color = HUD_CONTENT_BACKGROUND_COLOR;
+    
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    hud.customView = [[UIImageView alloc] initWithImage:image];
+    hud.label.text = message;
+    
+    [hud hideAnimated:YES afterDelay:2.0];
+    
+    return hud;
+}
+
 - (void)updateHUDMessage:(NSString *)message {
     [self updateHUDMessage:message autoHide:YES];
 }
