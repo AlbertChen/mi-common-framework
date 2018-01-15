@@ -36,7 +36,7 @@ NSString * const kCYDatabaseStoreTableAllFields = @"allFields";
 }
 
 + (NSString *)storeFilePath {
-    NSString *cachedDir = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *cachedDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString *bundleID = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"];
     NSString *dbName = [NSString stringWithFormat:@"%@.db", bundleID];
     NSString *filePath = [cachedDir stringByAppendingPathComponent:dbName];
