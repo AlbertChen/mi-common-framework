@@ -23,6 +23,8 @@
 - (void)dismiss:(BOOL)animated;
 - (void)dismiss:(BOOL)animated completion:(void (^)(void))completion;
 
+- (IBAction)backButtonPressed:(id)sender;
+
 #pragma mark - State View
 
 @property (nonatomic, strong) IBOutlet CYStateView *stateView;
