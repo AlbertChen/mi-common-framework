@@ -19,7 +19,7 @@
 }
 
 - (BOOL)isBackgroundLocked {
-    return self.backgroundLocked;
+    return _backgroundLocked;
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
