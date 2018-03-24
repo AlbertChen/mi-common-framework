@@ -72,7 +72,11 @@ static UIWindow *CYAlertWindow;
 }
 
 - (void)hide:(BOOL)animated {
-    [self.alertController dismiss:animated];
+    [self hide:animated compleiton:nil];
+}
+
+- (void)hide:(BOOL)animated compleiton:(void (^)(void))completion {
+    [self.alertController dismiss:animated completion:completion];
 }
 
 @end
@@ -380,10 +384,18 @@ static UIWindow *CYAlertWindow;
 }
 
 - (void)dismiss:(BOOL)animated {
-    void (^completion)(BOOL finished) = ^(BOOL finished) {
+    [self dismiss:animated completion:nil];
+}
+
+- (void)dismiss:(BOOL)animated completion:(void (^)(void))completion {
+    void (^compleitonBlock)(BOOL finished) = ^(BOOL finished) {
         [self.fromController.view.window makeKeyAndVisible];
         CYAlertWindow.hidden = YES;
         CYAlertWindow.rootViewController = nil;
+        
+        if (completion != nil) {
+            completion();
+        }
     };
     
     if (animated) {
@@ -403,9 +415,9 @@ static UIWindow *CYAlertWindow;
                     break;
                 }
             }
-        } completion:completion];
+        } completion:compleitonBlock];
     } else {
-        completion(YES);
+        compleitonBlock(YES);
     }
 }
 
