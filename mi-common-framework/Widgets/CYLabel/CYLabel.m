@@ -18,6 +18,16 @@
     self.layer.cornerRadius = cornerRadius;
 }
 
+- (BOOL)isBackgroundLocked {
+    return self.backgroundLocked;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor {
+    if (!self.isBackgroundLocked) {
+        [super setBackgroundColor:backgroundColor];
+    }
+}
+
 #pragma mark - Init
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {

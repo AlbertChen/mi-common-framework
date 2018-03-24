@@ -11,8 +11,8 @@
 @interface CYLabel : UILabel
 
 @property (nonatomic, assign) CGFloat cornerRadius;
-
 @property (nonatomic, assign) UIEdgeInsets contentEdgeInsets;
+@property (nonatomic, assign, getter=isBackgroundLocked) BOOL backgroundLocked;
 
 + (CGFloat)heightWithFont:(UIFont *)font contentEdgeInsets:(UIEdgeInsets)contentEdgeInsets;
 
