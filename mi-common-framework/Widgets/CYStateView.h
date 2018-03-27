@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_OPTIONS(NSUInteger, CYStateViewState) {
+typedef NS_ENUM(NSUInteger, CYStateViewState) {
     CYStateViewStateNone,
     CYStateViewStateLoading,
     CYStateViewStateError,
