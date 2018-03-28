@@ -50,6 +50,7 @@
         _captionView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.bounds.size.width, 35.0)];
         _captionView.translatesAutoresizingMaskIntoConstraints = NO;
         _captionView.backgroundColor = [UIColor clearColor];
+        _captionView.userInteractionEnabled = NO;
     }
     
     return _captionView;
@@ -171,6 +172,7 @@
         
         NSLayoutConstraint *centerXConstraint = [NSLayoutConstraint constraintWithItem:self.pageControl attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.captionView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0];
         NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:self.pageControl attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.captionView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0];
+        
         [self.captionView addConstraints:@[centerXConstraint, centerYConstraint]];
     }
 }
