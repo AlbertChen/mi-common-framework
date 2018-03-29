@@ -10,16 +10,19 @@
 
 @implementation Reachability (CYAdditions)
 
-BOOL is3GORGPRSReachable() {
-    return [[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == ReachableViaWWAN;
+BOOL isWWANReachable() {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    return [reachability isReachableViaWWAN];
 }
 
 BOOL isWIFIReachable() {
-    return [[Reachability reachabilityForLocalWiFi] currentReachabilityStatus] == ReachableViaWiFi;
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    return [reachability isReachableViaWiFi];
 }
 
 BOOL isNetworkReachable() {
-    return is3GORGPRSReachable() || isWIFIReachable();
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    return [reachability isReachable];
 }
 
 @end

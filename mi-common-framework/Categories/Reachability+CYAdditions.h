@@ -10,7 +10,7 @@
 
 @interface Reachability (CYAdditions)
 
-BOOL is3GORGPRSReachable(void);
+BOOL isWWANReachable(void);
 BOOL isWIFIReachable(void);
 BOOL isNetworkReachable(void);
 
