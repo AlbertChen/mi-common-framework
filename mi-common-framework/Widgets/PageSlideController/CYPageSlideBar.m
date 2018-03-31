@@ -10,7 +10,7 @@
 
 @interface CYPageSlideBar ()
 
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong, readwrite) UIScrollView *scrollView;
 @property (nonatomic, strong, readwrite) UIView *indicatorView;
 @property (nonatomic, strong, readwrite) UIView *seperatorView;
 
@@ -24,6 +24,7 @@
     if (_layoutStyle != layoutStyle) {
         _layoutStyle = layoutStyle;
         [self layoutButtons];
+        [self setSelectedItem:_selectedItem alwaysReset:YES];
     }
     
     if (layoutStyle == CYPageSlideBarLayoutStyleTite) {
@@ -65,7 +66,11 @@
 }
 
 - (void)setSelectedItem:(CYPageSlideBarItem *)selectedItem {
-    if (_selectedItem != selectedItem) {
+    [self setSelectedItem:selectedItem alwaysReset:NO];
+}
+
+- (void)setSelectedItem:(CYPageSlideBarItem *)selectedItem alwaysReset:(BOOL)alwaysReset {
+    if (_selectedItem != selectedItem || alwaysReset) {
         NSInteger preSelectedIndex = [self.items indexOfObject:_selectedItem];
         if (preSelectedIndex >= 0 && preSelectedIndex < self.items.count) {
             CYPageSlideBarButton *preSelectedButton = [self.scrollView viewWithTag:preSelectedIndex + 100];
