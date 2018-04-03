@@ -254,6 +254,8 @@
 		DED881601D7D7B610013B409 /* CYMultiLineInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8815A1D7D7B610013B409 /* CYMultiLineInputTableViewCell.m */; };
 		DED881611D7D7B610013B409 /* CYTableInputViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DED8815B1D7D7B610013B409 /* CYTableInputViewController.h */; };
 		DED881621D7D7B610013B409 /* CYTableInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8815C1D7D7B610013B409 /* CYTableInputViewController.m */; };
+		DEF756EF20723D16001BC177 /* UIAlertController+CYBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF756ED20723D16001BC177 /* UIAlertController+CYBlock.h */; };
+		DEF756F020723D16001BC177 /* UIAlertController+CYBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF756EE20723D16001BC177 /* UIAlertController+CYBlock.m */; };
 		DEFF037D1FDA662500309A0C /* CYCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */; };
 		DEFF037E1FDA662500309A0C /* CYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF037C1FDA662500309A0C /* CYCollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -527,6 +529,8 @@
 		DED8815A1D7D7B610013B409 /* CYMultiLineInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CYMultiLineInputTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DED8815B1D7D7B610013B409 /* CYTableInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTableInputViewController.h; sourceTree = "<group>"; };
 		DED8815C1D7D7B610013B409 /* CYTableInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTableInputViewController.m; sourceTree = "<group>"; };
+		DEF756ED20723D16001BC177 /* UIAlertController+CYBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CYBlock.h"; sourceTree = "<group>"; };
+		DEF756EE20723D16001BC177 /* UIAlertController+CYBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CYBlock.m"; sourceTree = "<group>"; };
 		DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYCollectionViewCell.h; sourceTree = "<group>"; };
 		DEFF037C1FDA662500309A0C /* CYCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -717,6 +721,8 @@
 				DE49F1021D485D0C00690AD4 /* UIImageView+CYWebImage.m */,
 				DE434A881CE9958800828EE6 /* UIAlertView+CYBlock.h */,
 				DE434A891CE9958800828EE6 /* UIAlertView+CYBlock.m */,
+				DEF756ED20723D16001BC177 /* UIAlertController+CYBlock.h */,
+				DEF756EE20723D16001BC177 /* UIAlertController+CYBlock.m */,
 				DEA6D4D51EB9C44F00E0BCCD /* UIScreen+CYScreenshot.h */,
 				DEA6D4D61EB9C44F00E0BCCD /* UIScreen+CYScreenshot.m */,
 				67578E8C1CED6B770041D1CE /* NSNull+CYInternalNullExtention.h */,
@@ -1227,6 +1233,7 @@
 				DE52E3B61D01845D00907DDA /* AFSecurityPolicy.h in Headers */,
 				DE52E3B71D01845D00907DDA /* AFURLRequestSerialization.h in Headers */,
 				DE52E3931D01844300907DDA /* CYCommon.h in Headers */,
+				DEF756EF20723D16001BC177 /* UIAlertController+CYBlock.h in Headers */,
 				DE52E3941D01844300907DDA /* CYConstants.h in Headers */,
 				DE52E3951D01844300907DDA /* CYTypeDefine.h in Headers */,
 				DE52E3961D01844300907DDA /* CYDataModel.h in Headers */,
@@ -1315,7 +1322,7 @@
 		DE5F91671CCDABBD009BECBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = CYYUN;
 				TargetAttributes = {
 					DE535E241D051056005D3BAD = {
@@ -1460,6 +1467,7 @@
 				DE7506301F906BCC00F86614 /* UINavigationBar+CYAdditions.m in Sources */,
 				DE5F92791CCDAC3F009BECBF /* SDWebImageDownloader.m in Sources */,
 				DE5F927F1CCDAC3F009BECBF /* UIImage+MultiFormat.m in Sources */,
+				DEF756F020723D16001BC177 /* UIAlertController+CYBlock.m in Sources */,
 				DE1E97731CD1A3DC00569FAC /* NSString+CYAdditions.m in Sources */,
 				DE5F924B1CCDAC3F009BECBF /* CYFilePathHelper.m in Sources */,
 				DE5F92781CCDAC3F009BECBF /* SDWebImageDecoder.m in Sources */,
@@ -1508,12 +1516,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1559,12 +1569,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

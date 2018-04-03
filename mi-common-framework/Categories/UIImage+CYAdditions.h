@@ -18,7 +18,7 @@
 /**
  *  Resize methods.
  *
- *  @param boundingSize boundingSize
+ *  @param dstSize boundingSize
  *  @param scale        should scale if smaller
  *
  *  @return resized image
