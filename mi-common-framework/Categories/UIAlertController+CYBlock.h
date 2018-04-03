@@ -13,7 +13,6 @@
 + (instancetype)presentFromController:(UIViewController *)controller
                                 title:(NSString *)title
                               message:(NSString *)message
-                       fromController:(UIViewController *)fromController
                     cancelButtonTitle:(NSString *)cancelButtonTitle
                      otherButtonTitle:(NSString *)otherButtonTitle
                            completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion;
