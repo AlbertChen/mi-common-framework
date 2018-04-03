@@ -38,6 +38,7 @@
 #import "UISearchBar+CYAdditions.h"
 #import "UINavigationBar+CYAdditions.h"
 #import "UIWindow+CYAdditions.h"
+#import "UIAlertController+CYBlock.h"
 
 /**
  *  Utils
