@@ -176,7 +176,7 @@
 }
 
 - (void)triggerRefresh {
-    if (self.paginator == nil) return;
+    if (self.paginator == nil || self.tableView.pullToRefreshView.state == SVPullToRefreshStateLoading) return;
     
     if (!self.pullRefreshEnabled) {
         [self handleRefresh];
