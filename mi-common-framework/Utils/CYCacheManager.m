@@ -23,10 +23,10 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
 @implementation CYCacheManager
 
 + (instancetype)defaultManager {
-    static CYCacheManager *manager = nil;
+    static id manager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[CYCacheManager alloc] init];
+        manager = [[[self class] alloc] init];
     });
     
     return manager;
@@ -48,7 +48,7 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
     // Image
     size += [[SDWebImageManager sharedManager].imageCache getSize];
     
-    // News and videos...
+    // Files
     dispatch_sync(self.ioQueue, ^{
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSDirectoryEnumerator *fileEnumerator = [fileManager enumeratorAtPath:self.cachedFolderPath];
@@ -72,7 +72,7 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
     // DB
     [CYDatabaseStore clearData];
     
-    // News and videos...
+    // Files
     dispatch_sync(self.ioQueue, ^{
         NSFileManager *fileManager = [NSFileManager defaultManager];
         [fileManager removeItemAtPath:self.cachedFolderPath error:NULL];
