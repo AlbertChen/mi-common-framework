@@ -27,6 +27,7 @@ extern NSString * const kCYDatabaseStoreTableAllFields;
 
 + (void)setupWithSQLs:(NSArray *)SQLs tables:(NSDictionary *)tables; // sql: create table
 + (void)reset;
++ (void)clearData;
 
 - (NSUInteger)getSize;
 

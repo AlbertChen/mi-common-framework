@@ -88,6 +88,10 @@ NSString * const kCYDatabaseStoreTableAllFields = @"allFields";
     }
 }
 
++ (void)clearData {
+    // Abstract method
+}
+
 - (NSUInteger)getSize {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *filePath = [[self class] storeFilePath];

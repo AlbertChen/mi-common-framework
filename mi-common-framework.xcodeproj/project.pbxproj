@@ -242,6 +242,8 @@
 		DEA7B7231F04A945000AF58A /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA7B71F1F04A945000AF58A /* NJKWebViewProgress.m */; };
 		DEA7B7241F04A945000AF58A /* NJKWebViewProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA7B7201F04A945000AF58A /* NJKWebViewProgressView.h */; };
 		DEA7B7251F04A945000AF58A /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */; };
+		DEA8332321CB9B7B00423F35 /* CYCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA8332121CB9B7B00423F35 /* CYCacheManager.h */; };
+		DEA8332421CB9B7B00423F35 /* CYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA8332221CB9B7B00423F35 /* CYCacheManager.m */; };
 		DEC1E43E1EB1FA4200A92989 /* CYImageInfiniteSlideView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC1E43C1EB1FA4200A92989 /* CYImageInfiniteSlideView.h */; };
 		DEC1E43F1EB1FA4200A92989 /* CYImageInfiniteSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC1E43D1EB1FA4200A92989 /* CYImageInfiniteSlideView.m */; };
 		DEC737D51F9F227C0030C2B1 /* UIWindow+CYAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC737D31F9F227C0030C2B1 /* UIWindow+CYAdditions.h */; };
@@ -516,6 +518,8 @@
 		DEA7B71F1F04A945000AF58A /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
 		DEA7B7201F04A945000AF58A /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
 		DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		DEA8332121CB9B7B00423F35 /* CYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCacheManager.h; sourceTree = "<group>"; };
+		DEA8332221CB9B7B00423F35 /* CYCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCacheManager.m; sourceTree = "<group>"; };
 		DEC1E43C1EB1FA4200A92989 /* CYImageInfiniteSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYImageInfiniteSlideView.h; sourceTree = "<group>"; };
 		DEC1E43D1EB1FA4200A92989 /* CYImageInfiniteSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYImageInfiniteSlideView.m; sourceTree = "<group>"; };
 		DEC4374B1CFD98BC008D88D8 /* CYTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTypeDefine.h; sourceTree = "<group>"; };
@@ -759,6 +763,8 @@
 				DE8CAB7E1D581F7E00CCD5AE /* Security */,
 				DE5F91A41CCDAC3F009BECBF /* CYFilePathHelper.h */,
 				DE5F91A51CCDAC3F009BECBF /* CYFilePathHelper.m */,
+				DEA8332121CB9B7B00423F35 /* CYCacheManager.h */,
+				DEA8332221CB9B7B00423F35 /* CYCacheManager.m */,
 				DE5F91A61CCDAC3F009BECBF /* CYLogger.h */,
 				DE5F91A71CCDAC3F009BECBF /* CYLogger.m */,
 				DE5644F81D6A8F840066EE68 /* CYImagePickerManager.h */,
@@ -1224,6 +1230,7 @@
 				DE52E3E81D01847B00907DDA /* UIImageView+WebCache.h in Headers */,
 				DE52E3E91D01847B00907DDA /* UIView+WebCacheOperation.h in Headers */,
 				DE52E3EA1D01847B00907DDA /* SVPullToRefresh.h in Headers */,
+				DEA8332321CB9B7B00423F35 /* CYCacheManager.h in Headers */,
 				DE52E3EB1D01847B00907DDA /* UIScrollView+SVInfiniteScrolling.h in Headers */,
 				DE52E3EC1D01847B00907DDA /* UIScrollView+SVPullToRefresh.h in Headers */,
 				DE52E3ED1D01847B00907DDA /* Reachability.h in Headers */,
@@ -1478,6 +1485,7 @@
 				DEA61E501FA05E5700BFFB87 /* CYNotificationView.m in Sources */,
 				DE5F927E1CCDAC3F009BECBF /* UIImage+GIF.m in Sources */,
 				DE2515B11CF2A077000825BD /* Reachability+CYAdditions.m in Sources */,
+				DEA8332421CB9B7B00423F35 /* CYCacheManager.m in Sources */,
 				DE5F926E1CCDAC3F009BECBF /* FMDatabaseQueue.m in Sources */,
 				DE764AE91D6FEFF9003CD9CE /* TTTAttributedLabel.m in Sources */,
 				DEFF037E1FDA662500309A0C /* CYCollectionViewCell.m in Sources */,
