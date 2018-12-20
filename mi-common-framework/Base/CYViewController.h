@@ -11,6 +11,7 @@
 
 @interface CYViewController : UIViewController
 
+@property (nonatomic, strong) NSString *backImage;
 @property (nonatomic, strong) NSURLSessionDataTask *dataTask;
 
 @property (nonatomic, assign) BOOL navigationBarHidden;

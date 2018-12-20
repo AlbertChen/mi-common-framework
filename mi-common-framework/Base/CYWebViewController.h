@@ -29,6 +29,7 @@
 @interface CYWebViewController : CYViewController <UIWebViewDelegate, NSURLConnectionDelegate, NJKWebViewProgressDelegate>
 
 @property (nonatomic, weak) id<CYWebViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSString *closeImage;
 @property (nonatomic, strong, readonly) id<CYWebViewController> object;
 
 - (instancetype)initWithObject:(id<CYWebViewController>)object delegate:(id<CYWebViewControllerDelegate>)delegate;

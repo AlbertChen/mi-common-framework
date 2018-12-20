@@ -28,6 +28,10 @@
 
 #pragma mark - Properties
 
+- (NSString *)closeImage {
+    return _closeImage ?: @"nav_close";
+}
+
 - (void)setBottomMargin:(CGFloat)bottomMargin {
     _bottomMargin = bottomMargin;
     
@@ -213,7 +217,7 @@
     
     if ([webView canGoBack]) {
         if (self.navigationItem.leftBarButtonItems.count < 2) {
-            UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_close" target:self selector:@selector(closeButtonPressed:)];
+            UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem itemWithImage:self.closeImage target:self selector:@selector(closeButtonPressed:)];
             self.navigationItem.leftBarButtonItems = @[self.navigationItem.leftBarButtonItem, closeBarButtonItem];
         }
     } else {

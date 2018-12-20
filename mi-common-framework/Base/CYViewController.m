@@ -34,7 +34,8 @@
     self.isViewAppearedFirstTime = YES;
     
     if (self.navigationController.childViewControllers.count > 1) {
-        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"nav_back" target:self selector:@selector(backButtonPressed:)];
+        NSString *backImage = self.backImage ?: @"nav_back";
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:backImage target:self selector:@selector(backButtonPressed:)];
     }
     
     if (self.stateView == nil) {
