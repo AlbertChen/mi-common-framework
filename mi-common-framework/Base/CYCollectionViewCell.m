@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 08/12/2017.
-//  Copyright © 2017 CYYUN. All rights reserved.
+//  Copyright © 2017 Chen Yiliang. All rights reserved.
 //
 
 #import "CYCollectionViewCell.h"

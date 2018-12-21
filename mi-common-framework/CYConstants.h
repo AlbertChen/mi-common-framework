@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 4/21/16.
-//  Copyright © 2016 CYYUN. All rights reserved.
+//  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
 #ifndef CYConstants_h
@@ -61,5 +61,10 @@ TODO_DEFER_STRINGIFY(__FILE__) " line " TODO_DEFER_STRINGIFY(__LINE__)
 inline static CGSize CYScreenSize() {
     return [UIScreen mainScreen].bounds.size;
 }
+
+/**
+ *  Other
+ */
+static NSString * const UIStatusBarDidTapNotification = @"UIStatusBarDidTapNotification";
 
 #endif /* CYConstants_h */

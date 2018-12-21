@@ -244,6 +244,10 @@
 		DEA7B7251F04A945000AF58A /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */; };
 		DEA8332321CB9B7B00423F35 /* CYCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA8332121CB9B7B00423F35 /* CYCacheManager.h */; };
 		DEA8332421CB9B7B00423F35 /* CYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA8332221CB9B7B00423F35 /* CYCacheManager.m */; };
+		DEA8342A21CCB47C00423F35 /* CYRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA8342821CCB47C00423F35 /* CYRouter.h */; };
+		DEA8342B21CCB47C00423F35 /* CYRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA8342921CCB47C00423F35 /* CYRouter.m */; };
+		DEA834CC21CCD9F700423F35 /* CYGestureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA834CA21CCD9F700423F35 /* CYGestureScrollView.m */; };
+		DEA834CD21CCD9F700423F35 /* CYGestureScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA834CB21CCD9F700423F35 /* CYGestureScrollView.h */; };
 		DEC1E43E1EB1FA4200A92989 /* CYImageInfiniteSlideView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC1E43C1EB1FA4200A92989 /* CYImageInfiniteSlideView.h */; };
 		DEC1E43F1EB1FA4200A92989 /* CYImageInfiniteSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC1E43D1EB1FA4200A92989 /* CYImageInfiniteSlideView.m */; };
 		DEC737D51F9F227C0030C2B1 /* UIWindow+CYAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC737D31F9F227C0030C2B1 /* UIWindow+CYAdditions.h */; };
@@ -520,6 +524,10 @@
 		DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		DEA8332121CB9B7B00423F35 /* CYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCacheManager.h; sourceTree = "<group>"; };
 		DEA8332221CB9B7B00423F35 /* CYCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCacheManager.m; sourceTree = "<group>"; };
+		DEA8342821CCB47C00423F35 /* CYRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYRouter.h; sourceTree = "<group>"; };
+		DEA8342921CCB47C00423F35 /* CYRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYRouter.m; sourceTree = "<group>"; };
+		DEA834CA21CCD9F700423F35 /* CYGestureScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYGestureScrollView.m; sourceTree = "<group>"; };
+		DEA834CB21CCD9F700423F35 /* CYGestureScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYGestureScrollView.h; sourceTree = "<group>"; };
 		DEC1E43C1EB1FA4200A92989 /* CYImageInfiniteSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYImageInfiniteSlideView.h; sourceTree = "<group>"; };
 		DEC1E43D1EB1FA4200A92989 /* CYImageInfiniteSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYImageInfiniteSlideView.m; sourceTree = "<group>"; };
 		DEC4374B1CFD98BC008D88D8 /* CYTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTypeDefine.h; sourceTree = "<group>"; };
@@ -628,6 +636,8 @@
 		DE5C42331E0396B100722013 /* PageSlideController */ = {
 			isa = PBXGroup;
 			children = (
+				DEA834CB21CCD9F700423F35 /* CYGestureScrollView.h */,
+				DEA834CA21CCD9F700423F35 /* CYGestureScrollView.m */,
 				DE5C42341E0396B100722013 /* CYPageSlideBar.h */,
 				DE5C42351E0396B100722013 /* CYPageSlideBar.m */,
 				DE5C42361E0396B100722013 /* CYPageSlideBarButton.h */,
@@ -769,6 +779,8 @@
 				DE5F91A71CCDAC3F009BECBF /* CYLogger.m */,
 				DE5644F81D6A8F840066EE68 /* CYImagePickerManager.h */,
 				DE5644F91D6A8F840066EE68 /* CYImagePickerManager.m */,
+				DEA8342821CCB47C00423F35 /* CYRouter.h */,
+				DEA8342921CCB47C00423F35 /* CYRouter.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1295,8 +1307,10 @@
 				DEC1E43E1EB1FA4200A92989 /* CYImageInfiniteSlideView.h in Headers */,
 				DEFF037D1FDA662500309A0C /* CYCollectionViewCell.h in Headers */,
 				DEA6D4D71EB9C44F00E0BCCD /* UIScreen+CYScreenshot.h in Headers */,
+				DEA8342A21CCB47C00423F35 /* CYRouter.h in Headers */,
 				DE764AE81D6FEFF9003CD9CE /* TTTAttributedLabel.h in Headers */,
 				DE764AEC1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.h in Headers */,
+				DEA834CD21CCD9F700423F35 /* CYGestureScrollView.h in Headers */,
 				DE5A76331F7394EC0038AFF1 /* UISearchBar+CYAdditions.h in Headers */,
 				DE52E3B21D01844300907DDA /* CYStateView.h in Headers */,
 			);
@@ -1329,8 +1343,9 @@
 		DE5F91671CCDABBD009BECBF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CY;
 				LastUpgradeCheck = 0930;
-				ORGANIZATIONNAME = CYYUN;
+				ORGANIZATIONNAME = "Chen Yiliang";
 				TargetAttributes = {
 					DE535E241D051056005D3BAD = {
 						CreatedOnToolsVersion = 7.3;
@@ -1455,11 +1470,13 @@
 				DE5061D81D631CE900CC3445 /* SZTextView.m in Sources */,
 				DE5F92721CCDAC3F009BECBF /* MBProgressHUD.m in Sources */,
 				DE5F923F1CCDAC3F009BECBF /* CYWebViewController.m in Sources */,
+				DEA834CC21CCD9F700423F35 /* CYGestureScrollView.m in Sources */,
 				DE5F92611CCDAC3F009BECBF /* DDASLLogCapture.m in Sources */,
 				DE764AED1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.m in Sources */,
 				DE5F925B1CCDAC3F009BECBF /* UIImageView+AFNetworking.m in Sources */,
 				DE5F92681CCDAC3F009BECBF /* DDMultiFormatter.m in Sources */,
 				DEA1878B1EA9DB1D00849B01 /* CYMessageView.m in Sources */,
+				DEA8342B21CCB47C00423F35 /* CYRouter.m in Sources */,
 				DE2B43E81CF5439600D96C35 /* CYDataModel+FMDB.m in Sources */,
 				DE5F92631CCDAC3F009BECBF /* DDFileLogger.m in Sources */,
 				DE5F92531CCDAC3F009BECBF /* AFURLResponseSerialization.m in Sources */,

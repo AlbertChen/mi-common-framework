@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 9/5/16.
-//  Copyright © 2016 CYYUN. All rights reserved.
+//  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

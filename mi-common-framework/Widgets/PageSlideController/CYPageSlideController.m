@@ -8,6 +8,7 @@
 
 #import "CYPageSlideController.h"
 #import <objc/runtime.h>
+#import "SVPullToRefresh.h"
 
 @interface CYPageSlideController ()
 
@@ -171,6 +172,18 @@
     [self updateSubviewsWithSelectedIndex:self.selectedIndex changeOffset:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarDidTap:) name:UIStatusBarDidTapNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIStatusBarDidTapNotification object:nil];
+}
+
 - (void)updateSubviews {
     if (_scrollView == nil) return;
     
@@ -232,6 +245,27 @@
         if (contentOffset.x != selectedIndex * self.view.frame.size.width) {
             contentOffset.x = selectedIndex * self.view.frame.size.width;
             [self.scrollView setContentOffset:contentOffset animated:YES];
+        }
+    }
+}
+
+#pragma mark - Notification
+
+- (void)statusBarDidTap:(NSNotification *)notification {
+    id viewController = self.selectedViewController;
+    UIScrollView *scrollView = nil;
+    if ([viewController respondsToSelector:@selector(tableView)]) {
+        scrollView = [viewController tableView];
+    } else if ([viewController respondsToSelector:@selector(scrollView)]) {
+        scrollView = [viewController scrollView];
+    }
+    if (scrollView != nil) {
+        CGPoint contentOffset = CGPointZero;
+        if (scrollView.pullToRefreshView.state == SVPullToRefreshStateLoading) {
+            contentOffset = CGPointMake(0.0, - scrollView.pullToRefreshView.bounds.size.height);
+        }
+        if (!CGPointEqualToPoint(scrollView.contentOffset, contentOffset)) {
+            [scrollView setContentOffset:contentOffset animated:YES];
         }
     }
 }

@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 2018/4/2.
-//  Copyright © 2018 CYYUN. All rights reserved.
+//  Copyright © 2018 Chen Yiliang. All rights reserved.
 //
 
 #import "UIAlertController+CYBlock.h"

@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 7/22/16.
-//  Copyright © 2016 CYYUN. All rights reserved.
+//  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
 #import "CYCacheManager.h"
@@ -36,8 +36,8 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
     self = [super init];
     if (self != nil) {
         NSString *cachesDirectory = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-        _cachedFolderPath = [cachesDirectory stringByAppendingPathComponent:@"com.cyyun.CacheManager"];
-        _ioQueue = dispatch_queue_create("com.cyyun.CacheManager", DISPATCH_QUEUE_SERIAL);
+        _cachedFolderPath = [cachesDirectory stringByAppendingPathComponent:@"com.Chen Yiliang.CacheManager"];
+        _ioQueue = dispatch_queue_create("com.Chen Yiliang.CacheManager", DISPATCH_QUEUE_SERIAL);
     }
     
     return self;

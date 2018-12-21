@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 5/25/16.
-//  Copyright © 2016 CYYUN. All rights reserved.
+//  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
 #import "CYDataModel+FMDB.h"
@@ -136,7 +136,7 @@
 + (NSArray *)fm_syncQueryObjectsWithCondition:(NSString *)condition database:(FMDatabase *)database error:(NSError **)error {
     NSMutableArray *results = [NSMutableArray arrayWithCapacity:0];
     if (![database open]) {
-        *error = [NSError errorWithDomain:@"com.cyyun.database" code:-1 userInfo:@{ @"message": @"Failed to open db" }];
+        *error = [NSError errorWithDomain:@"com.Chen Yiliang.database" code:-1 userInfo:@{ @"message": @"Failed to open db" }];
     } else {
         NSString *tableName = [CYDatabaseStore tableNameForKey:NSStringFromClass([self class])];
         NSArray *values = nil;
@@ -165,7 +165,7 @@
 + (NSArray *)fm_syncQueryObjectsWithConditions:(NSDictionary *)conditions database:(FMDatabase *)database error:(NSError **)error {
     NSMutableArray *results = [NSMutableArray arrayWithCapacity:0];
     if (![database open]) {
-        *error = [NSError errorWithDomain:@"com.cyyun.database" code:-1 userInfo:@{ @"message": @"Failed to open db" }];
+        *error = [NSError errorWithDomain:@"com.Chen Yiliang.database" code:-1 userInfo:@{ @"message": @"Failed to open db" }];
     } else {
         NSString *tableName = [CYDatabaseStore tableNameForKey:NSStringFromClass([self class])];
         NSArray *values = nil;

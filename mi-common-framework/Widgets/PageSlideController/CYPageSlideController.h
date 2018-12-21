@@ -29,6 +29,7 @@
 @property (nonatomic, weak) id<CYPageSlideControllerDelegate> delegate;
 
 - (void)updateSubviewsWithSelectedIndex:(NSInteger)selectedIndex changeOffset:(BOOL)changeOffset;
+- (void)statusBarDidTap:(NSNotification *)notification;
 
 @end
 

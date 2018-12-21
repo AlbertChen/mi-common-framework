@@ -3,7 +3,7 @@
 //  Demo
 //
 //  Created by Chen Yiliang on 3/1/16.
-//  Copyright © 2016 CYYUN Ltd. All rights reserved.
+//  Copyright © 2016 Chen Yiliang Ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
