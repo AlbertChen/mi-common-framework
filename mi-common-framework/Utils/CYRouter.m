@@ -11,7 +11,7 @@
 @implementation CYRouter
 
 + (instancetype)defaultRouter {
-    static CYRouter *router = nil;
+    static id router = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         router = [[[self class] alloc] init];

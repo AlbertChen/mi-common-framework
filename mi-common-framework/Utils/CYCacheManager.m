@@ -36,8 +36,8 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
     self = [super init];
     if (self != nil) {
         NSString *cachesDirectory = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-        _cachedFolderPath = [cachesDirectory stringByAppendingPathComponent:@"com.Chen Yiliang.CacheManager"];
-        _ioQueue = dispatch_queue_create("com.Chen Yiliang.CacheManager", DISPATCH_QUEUE_SERIAL);
+        _cachedFolderPath = [cachesDirectory stringByAppendingPathComponent:@"com.cyl.CacheManager"];
+        _ioQueue = dispatch_queue_create("com.cyl.CacheManager", DISPATCH_QUEUE_SERIAL);
     }
     
     return self;

@@ -49,6 +49,8 @@
 #import "NSData+CYEncrypt.h"
 #import "NSString+CYEncrypt.h"
 #import "CYImagePickerManager.h"
+#import "CYRouter.h"
+#import "CYCacheManager.h"
 
 /**
  *  Widgets
