@@ -53,12 +53,14 @@
 }
 
 - (BOOL)canPopToViewController:(Class)controllerClass {
-    return [self viewControllerInNavigationStack:controllerClass] != nil ? YES : NO;
+    return [self viewControllerInNavigationStack:controllerClass] != nil;
 }
 
 - (UIViewController *)viewControllerInNavigationStack:(Class)controllerClass {
     NSArray *viewControllers = self.currentViewController.navigationController.viewControllers;
-    for (UIViewController *viewController in viewControllers) {
+    int count = viewControllers.count;
+    for (int i = 0; i < count; i++) {
+        UIViewController *viewController = viewControllers[count - 1 - i];
         if ([viewController isKindOfClass:controllerClass]) {
             return viewController;
         }
