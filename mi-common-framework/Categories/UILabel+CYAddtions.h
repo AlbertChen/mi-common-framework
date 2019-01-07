@@ -10,7 +10,7 @@
 
 @interface UILabel (Addtions)
 
-@property (nonatomic, strong) NSString *html;
+@property (nonatomic, strong) NSString *htmlText;
 
 - (CGSize)boundingRectWithSize:(CGSize)size;
 

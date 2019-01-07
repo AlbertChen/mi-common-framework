@@ -9,6 +9,8 @@
 #import "CYImageInfiniteSlideView.h"
 #import "UIImageView+WebCache.h"
 
+IB_DESIGNABLE
+
 @interface CYImageInfiniteSlideView () <UIScrollViewDelegate>
 
 @property (nonatomic, strong, readwrite) UIScrollView *scrollView;

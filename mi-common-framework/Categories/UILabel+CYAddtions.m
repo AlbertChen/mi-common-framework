@@ -9,24 +9,22 @@
 #import "UILabel+CYAddtions.h"
 #import <objc/runtime.h>
 
-static void *UILabelHTMLKey = &UILabelHTMLKey;
-
 @implementation UILabel (Addtions)
 
-- (NSString *)html {
-    return objc_getAssociatedObject(self, UILabelHTMLKey);
+- (NSString *)htmlText {
+    return objc_getAssociatedObject(self, @selector(htmlText));
 }
 
-- (void)setHtml:(NSString *)html {
-    [self setHtml:html withTextColor:self.textColor];
+- (void)setHtmlText:(NSString *)htmlText {
+    [self setHtmlText:htmlText withTextColor:self.textColor];
 }
 
-- (void)setHtml:(NSString *)html withTextColor:(UIColor *)color {
+- (void)setHtmlText:(NSString *)htmlText withTextColor:(UIColor *)color {
     NSString *aHTML = nil;
-    if ([html isKindOfClass:[NSString class]]) {
-        aHTML = html;
+    if ([htmlText isKindOfClass:[NSString class]]) {
+        aHTML = htmlText;
     }
-    objc_setAssociatedObject(self, UILabelHTMLKey, aHTML, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @selector(htmlText), aHTML, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     @try {
         NSError *error = nil;

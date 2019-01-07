@@ -260,6 +260,10 @@
 		DED881601D7D7B610013B409 /* CYMultiLineInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8815A1D7D7B610013B409 /* CYMultiLineInputTableViewCell.m */; };
 		DED881611D7D7B610013B409 /* CYTableInputViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = DED8815B1D7D7B610013B409 /* CYTableInputViewController.h */; };
 		DED881621D7D7B610013B409 /* CYTableInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8815C1D7D7B610013B409 /* CYTableInputViewController.m */; };
+		DED9816C21E11C9C009B712F /* UIView+CYDesignable.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9816A21E11C9B009B712F /* UIView+CYDesignable.h */; };
+		DED9816D21E11C9C009B712F /* UIView+CYDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = DED9816B21E11C9B009B712F /* UIView+CYDesignable.m */; };
+		DED9819521E1DB8B009B712F /* UITextField+CYDesignable.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9819321E1DB8B009B712F /* UITextField+CYDesignable.h */; };
+		DED9819621E1DB8B009B712F /* UITextField+CYDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = DED9819421E1DB8B009B712F /* UITextField+CYDesignable.m */; };
 		DEF756EF20723D16001BC177 /* UIAlertController+CYBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF756ED20723D16001BC177 /* UIAlertController+CYBlock.h */; };
 		DEF756F020723D16001BC177 /* UIAlertController+CYBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF756EE20723D16001BC177 /* UIAlertController+CYBlock.m */; };
 		DEFF037D1FDA662500309A0C /* CYCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */; };
@@ -541,6 +545,10 @@
 		DED8815A1D7D7B610013B409 /* CYMultiLineInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CYMultiLineInputTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DED8815B1D7D7B610013B409 /* CYTableInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTableInputViewController.h; sourceTree = "<group>"; };
 		DED8815C1D7D7B610013B409 /* CYTableInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYTableInputViewController.m; sourceTree = "<group>"; };
+		DED9816A21E11C9B009B712F /* UIView+CYDesignable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CYDesignable.h"; sourceTree = "<group>"; };
+		DED9816B21E11C9B009B712F /* UIView+CYDesignable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CYDesignable.m"; sourceTree = "<group>"; };
+		DED9819321E1DB8B009B712F /* UITextField+CYDesignable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+CYDesignable.h"; sourceTree = "<group>"; };
+		DED9819421E1DB8B009B712F /* UITextField+CYDesignable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+CYDesignable.m"; sourceTree = "<group>"; };
 		DEF756ED20723D16001BC177 /* UIAlertController+CYBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CYBlock.h"; sourceTree = "<group>"; };
 		DEF756EE20723D16001BC177 /* UIAlertController+CYBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+CYBlock.m"; sourceTree = "<group>"; };
 		DEFF037B1FDA662500309A0C /* CYCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYCollectionViewCell.h; sourceTree = "<group>"; };
@@ -715,6 +723,7 @@
 		DE5F91891CCDAC3F009BECBF /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DED9816921E11C67009B712F /* Designable */,
 				DE5F918C1CCDAC3F009BECBF /* NSDate+CYAdditions.h */,
 				DE5F918D1CCDAC3F009BECBF /* NSDate+CYAdditions.m */,
 				DE5F91901CCDAC3F009BECBF /* UIBarButtonItem+CYAdditions.h */,
@@ -1180,6 +1189,17 @@
 			path = Input;
 			sourceTree = "<group>";
 		};
+		DED9816921E11C67009B712F /* Designable */ = {
+			isa = PBXGroup;
+			children = (
+				DED9816A21E11C9B009B712F /* UIView+CYDesignable.h */,
+				DED9816B21E11C9B009B712F /* UIView+CYDesignable.m */,
+				DED9819321E1DB8B009B712F /* UITextField+CYDesignable.h */,
+				DED9819421E1DB8B009B712F /* UITextField+CYDesignable.m */,
+			);
+			path = Designable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1199,6 +1219,7 @@
 				DE52E3C11D01847B00907DDA /* UIKit+AFNetworking.h in Headers */,
 				DE52E3C21D01847B00907DDA /* UIProgressView+AFNetworking.h in Headers */,
 				DE52E3C31D01847B00907DDA /* UIRefreshControl+AFNetworking.h in Headers */,
+				DED9819521E1DB8B009B712F /* UITextField+CYDesignable.h in Headers */,
 				DE52E3C41D01847B00907DDA /* UIWebView+AFNetworking.h in Headers */,
 				DE52E3C51D01847B00907DDA /* CocoaLumberjack.h in Headers */,
 				DE52E3C61D01847B00907DDA /* DDAbstractDatabaseLogger.h in Headers */,
@@ -1281,6 +1302,7 @@
 				DE52E3AD1D01844300907DDA /* NSString+FMDB.h in Headers */,
 				DEA61E4F1FA05E5700BFFB87 /* CYNotificationView.h in Headers */,
 				DEA1878A1EA9DB1D00849B01 /* CYMessageView.h in Headers */,
+				DED9816C21E11C9C009B712F /* UIView+CYDesignable.h in Headers */,
 				DE52E3AE1D01844300907DDA /* CYDataModel+FMDB.h in Headers */,
 				DE52E3AF1D01844300907DDA /* CYFilePathHelper.h in Headers */,
 				DE52E3B01D01844300907DDA /* CYLogger.h in Headers */,
@@ -1425,6 +1447,7 @@
 				DE5F92641CCDAC3F009BECBF /* DDLog.m in Sources */,
 				DE5F926F1CCDAC3F009BECBF /* FMResultSet.m in Sources */,
 				DE5F923A1CCDAC3F009BECBF /* CYDataModel.m in Sources */,
+				DED9816D21E11C9C009B712F /* UIView+CYDesignable.m in Sources */,
 				DE5F926B1CCDAC3F009BECBF /* FMDatabase.m in Sources */,
 				DE52BC211CCE22ED001A0D3F /* UIColor+CYAdditions.m in Sources */,
 				DEA6D4D81EB9C44F00E0BCCD /* UIScreen+CYScreenshot.m in Sources */,
@@ -1470,6 +1493,7 @@
 				DE5061D81D631CE900CC3445 /* SZTextView.m in Sources */,
 				DE5F92721CCDAC3F009BECBF /* MBProgressHUD.m in Sources */,
 				DE5F923F1CCDAC3F009BECBF /* CYWebViewController.m in Sources */,
+				DED9819621E1DB8B009B712F /* UITextField+CYDesignable.m in Sources */,
 				DEA834CC21CCD9F700423F35 /* CYGestureScrollView.m in Sources */,
 				DE5F92611CCDAC3F009BECBF /* DDASLLogCapture.m in Sources */,
 				DE764AED1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.m in Sources */,

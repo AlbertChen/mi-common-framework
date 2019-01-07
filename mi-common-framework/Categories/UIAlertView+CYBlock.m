@@ -9,8 +9,6 @@
 #import "UIAlertView+CYBlock.h"
 #import <objc/runtime.h>
 
-static void * kCompletion = &kCompletion;
-
 @interface UIAlertView () <UIAlertViewDelegate>
 
 @property (nonatomic, copy) void (^completion)(UIAlertView *alertView, NSUInteger selectedIndex);
@@ -19,12 +17,12 @@ static void * kCompletion = &kCompletion;
 
 @implementation UIAlertView (Block)
 
-- (void)setCompletion:(void (^)(UIAlertView *, NSUInteger))completion {
-    objc_setAssociatedObject(self, kCompletion, completion, OBJC_ASSOCIATION_RETAIN);
+- (void (^)(UIAlertView *alertView, NSUInteger selectedIndex))completion {
+    return objc_getAssociatedObject(self, @selector(completion));
 }
 
-- (void (^)(UIAlertView *alertView, NSUInteger selectedIndex))completion {
-    return objc_getAssociatedObject(self, kCompletion);
+- (void)setCompletion:(void (^)(UIAlertView *, NSUInteger))completion {
+    objc_setAssociatedObject(self, @selector(completion), completion, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 + (instancetype)showAlertViewWithTitle:(NSString *)title message:(NSString *)message completion:(void (^)(UIAlertView *, NSUInteger))completion cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {

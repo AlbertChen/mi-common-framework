@@ -20,6 +20,8 @@
 /**
  *  Categories
  */
+#import "UIView+CYDesignable.h"
+#import "UITextField+CYDesignable.h"
 #import "UIImage+CYAdditions.h"
 #import "UIImageView+CYWebImage.h"
 #import "NSDate+CYAdditions.h"
