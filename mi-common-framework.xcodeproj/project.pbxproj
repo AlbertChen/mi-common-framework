@@ -35,6 +35,8 @@
 		DE2B43EB1CF54A2200D96C35 /* CYDatabaseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2B43EA1CF54A2200D96C35 /* CYDatabaseStore.m */; };
 		DE2B43F11CF5528100D96C35 /* NSString+FMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2B43F01CF5528100D96C35 /* NSString+FMDB.m */; };
 		DE2B43F51CF59AFF00D96C35 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B43F41CF59AFF00D96C35 /* MobileCoreServices.framework */; };
+		DE2C417021E2EC5100E7B40A /* CYCountdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2C416E21E2EC5000E7B40A /* CYCountdownButton.m */; };
+		DE2C417121E2EC5100E7B40A /* CYCountdownButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2C416F21E2EC5000E7B40A /* CYCountdownButton.h */; };
 		DE4233D91F790CCA008DD06D /* CYExpandedView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4233D71F790CCA008DD06D /* CYExpandedView.h */; };
 		DE4233DA1F790CCA008DD06D /* CYExpandedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4233D81F790CCA008DD06D /* CYExpandedView.m */; };
 		DE434A8A1CE9958800828EE6 /* UIAlertView+CYBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = DE434A891CE9958800828EE6 /* UIAlertView+CYBlock.m */; };
@@ -311,6 +313,8 @@
 		DE2B43EF1CF5528100D96C35 /* NSString+FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FMDB.h"; sourceTree = "<group>"; };
 		DE2B43F01CF5528100D96C35 /* NSString+FMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FMDB.m"; sourceTree = "<group>"; };
 		DE2B43F41CF59AFF00D96C35 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		DE2C416E21E2EC5000E7B40A /* CYCountdownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCountdownButton.m; sourceTree = "<group>"; };
+		DE2C416F21E2EC5000E7B40A /* CYCountdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCountdownButton.h; sourceTree = "<group>"; };
 		DE4233D71F790CCA008DD06D /* CYExpandedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYExpandedView.h; sourceTree = "<group>"; };
 		DE4233D81F790CCA008DD06D /* CYExpandedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYExpandedView.m; sourceTree = "<group>"; };
 		DE434A881CE9958800828EE6 /* UIAlertView+CYBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+CYBlock.h"; sourceTree = "<group>"; };
@@ -587,6 +591,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA187D51EAA10DB00849B01 /* CYLabel */,
+				DE2C416D21E2EC5000E7B40A /* CountdownButton */,
 				DED881561D7D7B610013B409 /* Input */,
 				DE7A381A1D6C3FCE00393FC8 /* ImageDisplay */,
 				DEC1E43B1EB1FA4200A92989 /* ImageInfiniteSlideView */,
@@ -612,6 +617,15 @@
 				DE2B43E71CF5439600D96C35 /* CYDataModel+FMDB.m */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		DE2C416D21E2EC5000E7B40A /* CountdownButton */ = {
+			isa = PBXGroup;
+			children = (
+				DE2C416F21E2EC5000E7B40A /* CYCountdownButton.h */,
+				DE2C416E21E2EC5000E7B40A /* CYCountdownButton.m */,
+			);
+			path = CountdownButton;
 			sourceTree = "<group>";
 		};
 		DE4E8DD21DBF08290067D2F1 /* RequestEncoding */ = {
@@ -1316,6 +1330,7 @@
 				DE7A38221D6C3FCE00393FC8 /* CYImageDisplayView.h in Headers */,
 				DE51416F1D54989300187EDA /* STKeychain.h in Headers */,
 				DED8815F1D7D7B610013B409 /* CYMultiLineInputTableViewCell.h in Headers */,
+				DE2C417121E2EC5100E7B40A /* CYCountdownButton.h in Headers */,
 				DED881541D7D79370013B409 /* CYProfileItem.h in Headers */,
 				DEC737D51F9F227C0030C2B1 /* UIWindow+CYAdditions.h in Headers */,
 				DED8815D1D7D7B610013B409 /* CYInputTableViewCell.h in Headers */,
@@ -1467,6 +1482,7 @@
 				DE2515AD1CF29E75000825BD /* Reachability.m in Sources */,
 				DE4E8DD61DBF08290067D2F1 /* NSDictionary+RequestEncoding.m in Sources */,
 				DE5F924F1CCDAC3F009BECBF /* AFHTTPSessionManager.m in Sources */,
+				DE2C417021E2EC5100E7B40A /* CYCountdownButton.m in Sources */,
 				DE5C42431E0396B100722013 /* CYPageSlideController.m in Sources */,
 				DED881551D7D79370013B409 /* CYProfileItem.m in Sources */,
 				DE5644FB1D6A8F840066EE68 /* CYImagePickerManager.m in Sources */,
