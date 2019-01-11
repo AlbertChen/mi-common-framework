@@ -24,6 +24,10 @@
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
     self.layer.cornerRadius = cornerRadius;
+    self.clipsToBounds = cornerRadius > 0.0;
+    // Performance improvement here depends on the size of your view
+    self.layer.shouldRasterize = YES;
+    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
 }
 
 - (CGFloat)borderWidth {

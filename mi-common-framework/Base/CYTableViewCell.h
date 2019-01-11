@@ -23,9 +23,11 @@ typedef NS_ENUM(NSInteger, CYTableViewCellPosition) {
 
 + (CGFloat)cellHeight;
 + (CGFloat)cellHeightWithFixedRatio:(BOOL)fixedRatio;
++ (CGFloat)cellHeightWithFixedRatio:(BOOL)fixedRatio constrainedToWidth:(CGFloat)width;
 
 + (CGFloat)fittingHeight;
 + (CGFloat)fittingHeightWithContent:(id)content;
++ (CGFloat)fittingHeightWithContent:(id)content constrainedToWidth:(CGFloat)width;
 
 + (NSString *)cellIdentifier;
 
