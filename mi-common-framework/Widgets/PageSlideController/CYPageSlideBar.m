@@ -281,6 +281,10 @@
 
 #pragma mark - Public Mehtods
 
+- (void)reloadSubviews {
+    [self layoutButtons];
+}
+
 - (void)moveToIndex:(NSInteger)index progress:(CGFloat)progress {
     if ([self.dataSource respondsToSelector:@selector(pageSlideBar:buttonForItem:atIndex:)]) return;
     

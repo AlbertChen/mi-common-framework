@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, CYPageSlideBarLayoutStyle) {
 @property (nonatomic, weak) IBOutlet id<CYPageSlideBarDataSource> dataSource;
 @property (nonatomic, weak) IBOutlet id<CYPageSlideBarDelegate> delegate;
 
+- (void)reloadSubviews;
 - (void)moveToIndex:(NSInteger)index progress:(CGFloat)progress;
 
 @end

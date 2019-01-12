@@ -69,6 +69,7 @@
         CGRect frame = _pageSlideBar.frame;
         frame.size.height = pageSlideBarHeight;
         _pageSlideBar.frame = frame;
+        [_pageSlideBar reloadSubviews];
         
         frame = _scrollView.frame;
         frame.origin.y += changedHeight;
