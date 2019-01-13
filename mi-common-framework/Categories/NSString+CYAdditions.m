@@ -82,12 +82,12 @@
     if ([NSString isEmpty:self]) {
         return firstLetter;
     }
-
+    
     NSMutableString *mutableString = [NSMutableString stringWithString:[self substringToIndex:1]];
     CFMutableStringRef mutableStringRef = (__bridge CFMutableStringRef)mutableString;
-    [self stringTransformToLatin:mutableStringRef];
-    [self stringTransformStripCombiningMarks:mutableStringRef];
-
+    CFStringTransform(mutableStringRef, nil, kCFStringTransformToLatin, NO);
+    CFStringTransform(mutableStringRef, nil, kCFStringTransformStripCombiningMarks, NO);
+    
     NSString *letter = [[mutableString uppercaseString] substringToIndex:1];
     unichar capital = [letter characterAtIndex:0];
     if (capital >= 'A' && capital <= 'Z') {
@@ -95,18 +95,6 @@
     }
     
     return firstLetter;
-}
-
-- (CFMutableStringRef)stringTransformToLatin:(CFMutableStringRef)mutableStringRef{
-    
-    CFStringTransform(mutableStringRef, nil, kCFStringTransformToLatin, NO);
-    return mutableStringRef;
-}
-
-- (CFMutableStringRef)stringTransformStripCombiningMarks:(CFMutableStringRef)mutableStringRef{
-    
-    CFStringTransform(mutableStringRef, nil, kCFStringTransformStripCombiningMarks, NO);
-    return mutableStringRef;
 }
 
 - (CGSize)sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width {
