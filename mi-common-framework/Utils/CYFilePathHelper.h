@@ -15,7 +15,7 @@ BOOL CYCheckPathExsit(NSString *path, BOOL createIfNeeded);
 
 NSString * CYCachesPath(void);
 NSString * CYDocumentPath(void);
-NSString *CYTempPath(void);
+NSString * CYTempPath(void);
 
 NSString * CYPathForDocumentsResource(NSString *relativePath, BOOL createIfNeeded);
 NSString * CYPathForCachesResource(NSString *relativePath, BOOL createIfNeeded);

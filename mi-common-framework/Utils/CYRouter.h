@@ -12,6 +12,7 @@
 @interface CYRouter : NSObject
 
 + (instancetype)defaultRouter;
+
 @property (nonatomic, strong, readonly) UIViewController *currentViewController;
 
 // Navigation

@@ -17,7 +17,7 @@
 
 - (UIView *)findContentViewFromView:(UIView *)view {
     if ([view isKindOfClass:[UIView class]] && view.frame.size.height == 44.0 && view != self ) {
-        return (UIImageView *)view;
+        return (UIView *)view;
     }
     
     for (UIView *subView in view.subviews) {

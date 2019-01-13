@@ -590,6 +590,7 @@
 		DE29BE091CDB2C2400E49DE8 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				DEEAAD4921EB91F500788041 /* AlertController */,
 				DEA187D51EAA10DB00849B01 /* CYLabel */,
 				DE2C416D21E2EC5000E7B40A /* CountdownButton */,
 				DED881561D7D7B610013B409 /* Input */,
@@ -598,10 +599,7 @@
 				DEA187871EA9DB1D00849B01 /* MessageView */,
 				DEA61E4C1FA05E1F00BFFB87 /* NotificationView */,
 				DE5C42331E0396B100722013 /* PageSlideController */,
-				DE29BE0A1CDB2C2F00E49DE8 /* CYAlertController.h */,
-				DE29BE0B1CDB2C2F00E49DE8 /* CYAlertController.m */,
-				DE2515A51CF29A04000825BD /* CYStateView.h */,
-				DE2515A61CF29A04000825BD /* CYStateView.m */,
+				DEEAAD4A21EB921600788041 /* StateView */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -1212,6 +1210,24 @@
 				DED9819421E1DB8B009B712F /* UITextField+CYDesignable.m */,
 			);
 			path = Designable;
+			sourceTree = "<group>";
+		};
+		DEEAAD4921EB91F500788041 /* AlertController */ = {
+			isa = PBXGroup;
+			children = (
+				DE29BE0A1CDB2C2F00E49DE8 /* CYAlertController.h */,
+				DE29BE0B1CDB2C2F00E49DE8 /* CYAlertController.m */,
+			);
+			path = AlertController;
+			sourceTree = "<group>";
+		};
+		DEEAAD4A21EB921600788041 /* StateView */ = {
+			isa = PBXGroup;
+			children = (
+				DE2515A51CF29A04000825BD /* CYStateView.h */,
+				DE2515A61CF29A04000825BD /* CYStateView.m */,
+			);
+			path = StateView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
