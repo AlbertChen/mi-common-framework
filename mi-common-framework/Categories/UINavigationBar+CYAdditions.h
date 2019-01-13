@@ -11,7 +11,6 @@
 @interface UINavigationBar (CYAdditions)
 
 @property (nonatomic, readonly) UIView *contentView;
-
-- (void)hidenSeparator:(BOOL)hiden;
+@property (nonatomic, assign, getter=isSeparatorHidden) BOOL separatorHidden;
 
 @end

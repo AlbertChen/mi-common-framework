@@ -30,10 +30,14 @@
     return nil;
 }
 
-
-- (void)hidenSeparator:(BOOL)hiden {
+- (BOOL)isSeparatorHidden {
     UIImageView *lineView = [self findSeparatorFromView:self];
-    lineView.hidden = hiden;
+    return lineView.hidden;
+}
+
+- (void)setSeparatorHidden:(BOOL)separatorHidden {
+    UIImageView *lineView = [self findSeparatorFromView:self];
+    lineView.hidden = separatorHidden;
 }
 
 - (UIImageView *)findSeparatorFromView:(UIView *)view {
