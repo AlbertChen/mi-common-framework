@@ -16,6 +16,21 @@
 
 @implementation CYTableViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self != nil) {
+        [self setContentWidth:CGRectGetWidth([UIScreen mainScreen].bounds)];
+    }
+    
+    return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    [self setContentWidth:CGRectGetWidth([UIScreen mainScreen].bounds)];
+}
+
 - (void)setContentWidth:(CGFloat)contentWidth {
     if (self.contentWidthView != nil) {
         [self.contentWidthView removeFromSuperview];

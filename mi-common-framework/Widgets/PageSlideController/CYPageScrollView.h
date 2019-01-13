@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYGestureScrollView : UIScrollView
+@interface CYPageScrollView : UIScrollView
 
 @property (nonatomic, assign) IBInspectable BOOL alwaysBounceHorizontalLeft;
 

@@ -69,7 +69,6 @@
         CGRect frame = _pageSlideBar.frame;
         frame.size.height = pageSlideBarHeight;
         _pageSlideBar.frame = frame;
-        [_pageSlideBar reloadSubviews];
         
         frame = _scrollView.frame;
         frame.origin.y += changedHeight;
@@ -88,9 +87,9 @@
     }
 }
 
-- (UIScrollView *)scrollView {
+- (CYPageScrollView *)scrollView {
     if (_scrollView == nil) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        _scrollView = [[CYPageScrollView alloc] initWithFrame:CGRectZero];
         _scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;

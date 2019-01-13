@@ -6,9 +6,9 @@
 //  Copyright © 2017 Chen Yiliang. All rights reserved.
 //
 
-#import "CYGestureScrollView.h"
+#import "CYPageScrollView.h"
 
-@implementation CYGestureScrollView
+@implementation CYPageScrollView
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     id nextResponder = [otherGestureRecognizer.view nextResponder];
