@@ -31,8 +31,8 @@
 + (instancetype)dictionaryWithDataModel:(CYDataModel *)dataModel {
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:0];
     NSArray *properties = [[dataModel class] writeableProperties];
-    for (NSString *property in properties) {
-        dict[property] = [dataModel valueForKey:property];
+    for (CYDataModelClassProperty *property in properties) {
+        dict[property.name] = [dataModel valueForKey:property.name];
     }
     
     return [dict copy];

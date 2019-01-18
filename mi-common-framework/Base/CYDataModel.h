@@ -8,9 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@interface CYDataModelClassProperty : NSObject
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) Class type;
+@property (nonatomic, copy) Class subitemType; // Define mode: @property (nonatomic) NSArray<subitemType> array;
+@property (nonatomic, assign, getter=isDataModel) BOOL dataModel; // Is kind of CYDateModel
+
+@end
+
 @interface CYDataModel : NSObject <NSCopying>
 
-+ (NSArray *)writeableProperties;
++ (NSArray<CYDataModelClassProperty *> *)writeableProperties;
 + (NSArray *)objectsWithAttribuesArray:(NSArray *)attributesArray;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;

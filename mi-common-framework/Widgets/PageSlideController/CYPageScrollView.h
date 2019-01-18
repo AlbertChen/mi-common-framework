@@ -1,5 +1,5 @@
 //
-//  CYGestureScrollView.h
+//  CYPageScrollView.h
 //  PageSlideControllerDemo
 //
 //  Created by Chen Yiliang on 23/10/2017.

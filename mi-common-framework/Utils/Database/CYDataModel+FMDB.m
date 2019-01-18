@@ -14,6 +14,23 @@
 
 @implementation CYDataModel (FMDB)
 
++ (NSArray<NSString *> *)fm_writeableProperties {
+    NSMutableArray *properties = [NSMutableArray new];
+    for (CYDataModelClassProperty *property in [self writeableProperties]) {
+        if (property.isDataModel ||
+            property.type == [NSArray class] ||
+            property.type == [NSDictionary class] ||
+            property.type == [NSMutableArray class] ||
+            property.type == [NSMutableDictionary class]) {
+            continue;
+        }
+        
+        [properties addObject:property.name];
+    }
+    
+    return properties;
+}
+
 - (void)fm_updateObjectWithKey:(NSString *)key {
     FMDatabaseQueue *queue = [CYDatabaseStore defaultStore].databaseQueue;
     [self fm_updateObjectWithKey:key databaseQueue:queue];
@@ -46,7 +63,7 @@
     [databaseQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = [CYDatabaseStore tableNameForKey:NSStringFromClass([self class])];
         NSArray *values = nil;
-        NSString *sql = [NSString insertSQLWithTableName:tableName attributes:attributes userInfo:userInfo values:&values allFields:[self writeableProperties]];
+        NSString *sql = [NSString insertSQLWithTableName:tableName attributes:attributes userInfo:userInfo values:&values allFields:[self fm_writeableProperties]];
         NSError *error = nil;
         [db executeUpdate:sql values:values error:&error];
         if (error != nil) {
@@ -65,7 +82,7 @@
         NSString *tableName = [CYDatabaseStore tableNameForKey:NSStringFromClass([self class])];
         for (NSDictionary *attributes in attributesArray) {
             NSArray *values = nil;
-            NSString *sql = [NSString insertSQLWithTableName:tableName attributes:attributes userInfo:userInfo values:&values allFields:[self writeableProperties]];
+            NSString *sql = [NSString insertSQLWithTableName:tableName attributes:attributes userInfo:userInfo values:&values allFields:[self fm_writeableProperties]];
             NSError *error = nil;
             [db executeUpdate:sql values:values error:&error];
             if (error != nil) {
@@ -84,7 +101,7 @@
     [databaseQueue inDatabase:^(FMDatabase *db) {
         NSString *tableName = [CYDatabaseStore tableNameForKey:NSStringFromClass([self class])];
         NSArray *values = nil;
-        NSString *sql = [NSString updateSQLWithTableName:tableName attributes:attributes conditions:conditions values:&values allFields:[self writeableProperties]];
+        NSString *sql = [NSString updateSQLWithTableName:tableName attributes:attributes conditions:conditions values:&values allFields:[self fm_writeableProperties]];
         NSError *error = nil;
         [db executeUpdate:sql values:values error:&error];
         if (error != nil) {
