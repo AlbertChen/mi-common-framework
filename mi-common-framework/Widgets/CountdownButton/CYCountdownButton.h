@@ -12,7 +12,7 @@ IB_DESIGNABLE
 
 @interface CYCountdownButton : UIButton
 
-@property (nonatomic, assign, getter=isCountingDown) BOOL countingDown;
+@property (nonatomic, assign, getter=isInCountdown) BOOL inCountdown;
 @property (nonatomic, assign) IBInspectable NSTimeInterval timeInterval;
 @property (nonatomic, strong) UILabel *countdownLabel;
 @property (nonatomic, strong) void (^completion)(void);

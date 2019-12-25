@@ -20,13 +20,11 @@ const static NSTimeInterval kTimeIntervalDefaultValue = 60.0f;
 
 @implementation CYCountdownButton
 
-- (void)dealloc
-{
+- (void)dealloc {
     [self stopCountdown];
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
     
     NSString *disabledTitle = [self titleForState:UIControlStateDisabled];
@@ -39,12 +37,11 @@ const static NSTimeInterval kTimeIntervalDefaultValue = 60.0f;
 
 #pragma mark - Property
 
-- (BOOL)isCountingDown {
-    return _countingDown;
+- (BOOL)isInCountdown {
+    return _inCountdown;
 }
 
-- (UILabel *)countdownLabel
-{
+- (UILabel *)countdownLabel {
     if (_countdownLabel == nil) {
         _countdownLabel = [[UILabel alloc] initWithFrame:self.bounds];
         _countdownLabel.font = self.titleLabel.font;
@@ -59,9 +56,8 @@ const static NSTimeInterval kTimeIntervalDefaultValue = 60.0f;
 
 #pragma mark - Public Methods
 
-- (void)startCountdown
-{
-    _countingDown = YES;
+- (void)startCountdown {
+    _inCountdown = YES;
     self.enabled = NO;
     [self setTitle:@"" forState:UIControlStateDisabled];
     _backwardsTimeInterval = _timeInterval == 0.0 ? kTimeIntervalDefaultValue : _timeInterval;
@@ -77,11 +73,10 @@ const static NSTimeInterval kTimeIntervalDefaultValue = 60.0f;
     [self startTimer];
 }
 
-- (void)stopCountdown
-{
+- (void)stopCountdown {
     [self stopTimer];
     
-    _countingDown = NO;
+    _inCountdown = NO;
     self.enabled = YES;
     [self.countdownLabel removeFromSuperview];
     [self setTitle:self.disabledTitle forState:UIControlStateDisabled];
@@ -107,24 +102,21 @@ const static NSTimeInterval kTimeIntervalDefaultValue = 60.0f;
     return format;
 }
 
-- (void)stopTimer
-{
+- (void)stopTimer {
     if (_timer != nil) {
         [_timer invalidate];
         _timer = nil;
     }
 }
 
-- (void)startTimer
-{
+- (void)startTimer {
     [self stopTimer];
     
     _timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFireHandler) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 
-- (void)timerFireHandler
-{
+- (void)timerFireHandler {
     _backwardsTimeInterval = _backwardsTimeInterval - 1.0;
     if (_backwardsTimeInterval < 1.0) {
         [self stopCountdown];
