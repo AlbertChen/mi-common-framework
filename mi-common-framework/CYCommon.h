@@ -32,6 +32,7 @@
 #import "UIColor+CYAdditions.h"
 #import "UILabel+CYAddtions.h"
 #import "NSString+CYAdditions.h"
+#import "NSNumber+CYAdditions.h"
 #import "UIAlertView+CYBlock.h"
 #import "UIScreen+CYScreenshot.h"
 #import "MBProgressHUD+CYConvenience.h"
