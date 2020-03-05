@@ -64,4 +64,22 @@
 - (NSString *)AESDecryptWithKey:(NSString *)key;
 - (NSString *)AESDecryptWithKey:(NSString *)key iv:(NSString *)iv;
 
+/**
+ * RSA加密字符串
+ * @param publicKey 加密公钥
+ * @param isSign 是否是数字签名
+ *
+ * @return 返回加密后经Base64编码过的字符串
+ */
+- (NSString *)RSAEncryptWithKey:(NSString *)publicKey;
+- (NSString *)RSAEncryptWithKey:(NSString *)publicKey isSign:(BOOL)isSign;
+
+/**
+* RSA解密Base64编码过的加密字符串
+* @param privateKey 加密私钥
+*
+* @return 返回原始字符串
+*/
+- (NSString *)RSADecryptWithKey:(NSString *)privateKey;
+
 @end

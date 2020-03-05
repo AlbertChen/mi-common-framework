@@ -31,7 +31,7 @@
 - (NSData *)DESDecryptWithKey:(NSString *)key iv:(NSString *)iv;
 
 /**
- * AES(256)加密二进制数据
+ * AES(256)解密二进制数据
  * @param key 加密秘钥
  * @param iv    加密偏移量
  *
@@ -49,5 +49,23 @@
  */
 - (NSData *)AESDecryptWithKey:(NSString *)key;
 - (NSData *)AESDecryptWithKey:(NSString *)key iv:(NSString *)iv;
+
+/**
+ * RSA加密二进制数据
+ * @param publicKey 加密公钥
+ * @param isSign 是否是数字签名
+ *
+ * @return 返回加密二进制数据
+ */
+- (NSData *)RSAEncryptWithKey:(NSString *)publicKey;
+- (NSData *)RSAEncryptWithKey:(NSString *)publicKey isSign:(BOOL)isSign;
+
+/**
+* RSA解密二进制数据
+* @param privateKey 加密私钥
+*
+* @return 返回原始二进制数据
+*/
+- (NSData *)RSADecryptWithKey:(NSString *)privateKey;
 
 @end

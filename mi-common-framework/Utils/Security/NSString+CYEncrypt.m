@@ -36,6 +36,8 @@
     return ret;
 }
 
+#pragma mark - DES
+
 - (NSString *)DESEncryptWithKey:(NSString *)key {
     return [self DESEncryptWithKey:key iv:nil];
 }
@@ -58,6 +60,8 @@
     return result;
 }
 
+#pragma mark - AES
+
 - (NSString *)AESEncryptWithKey:(NSString *)key {
     return [self AESEncryptWithKey:key iv:nil];
 }
@@ -76,6 +80,26 @@
 - (NSString *)AESDecryptWithKey:(NSString *)key iv:(NSString *)iv {
     NSData *encryptData = [[NSData alloc] initWithBase64EncodedString:self options:0];
     NSData *decryptData = [encryptData AESDecryptWithKey:key iv:iv];
+    NSString *result = [[NSString alloc] initWithData:decryptData encoding:NSUTF8StringEncoding];
+    return result;
+}
+
+#pragma mark - RSA
+
+- (NSString *)RSAEncryptWithKey:(NSString *)publicKey {
+    return [self RSAEncryptWithKey:publicKey isSign:NO];
+}
+
+- (NSString *)RSAEncryptWithKey:(NSString *)publicKey isSign:(BOOL)isSign {
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptData = [data RSAEncryptWithKey:publicKey isSign:isSign];
+    NSString *result = [encryptData base64EncodedStringWithOptions:0];
+    return result;
+}
+
+- (NSString *)RSADecryptWithKey:(NSString *)privateKey {
+    NSData *encryptData = [[NSData alloc] initWithBase64EncodedString:self options:0];
+    NSData *decryptData = [encryptData RSADecryptWithKey:privateKey];
     NSString *result = [[NSString alloc] initWithData:decryptData encoding:NSUTF8StringEncoding];
     return result;
 }
