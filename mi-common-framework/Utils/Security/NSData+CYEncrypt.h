@@ -11,7 +11,7 @@
 @interface NSData (CYEncrypt)
 
 /**
- * DES加密二进制数据
+ * 3DES加密二进制数据
  * @param key   加密秘钥
  * @param iv    加密偏移量
  *
@@ -21,7 +21,7 @@
 - (NSData *)DESEncryptWithKey:(NSString *)key iv:(NSString *)iv;
 
 /**
- * DES解密二进制数据
+ * 3DES解密二进制数据
  * @param key   加密秘钥
  * @param iv    加密偏移量
  *
@@ -31,19 +31,23 @@
 - (NSData *)DESDecryptWithKey:(NSString *)key iv:(NSString *)iv;
 
 /**
- * AES解密二进制数据
- * @param key 32位加密秘钥
+ * AES(256)解密二进制数据
+ * @param key 加密秘钥
+ * @param iv    加密偏移量
  *
  * @return 返回原始二进制数据
  */
-- (NSData *)AES256EncryptWithKey:(NSString *)key;
+- (NSData *)AESEncryptWithKey:(NSString *)key;
+- (NSData *)AESEncryptWithKey:(NSString *)key iv:(NSString *)iv;
 
 /**
- * AES解密二进制数据
- * @param key 32位加密秘钥
+ * AES(256)解密二进制数据
+ * @param key 加密秘钥
+ * @param iv    加密偏移量
  *
  * @return 返回原始二进制数据
  */
-- (NSData *)AES256DecryptWithKey:(NSString *)key;
+- (NSData *)AESDecryptWithKey:(NSString *)key;
+- (NSData *)AESDecryptWithKey:(NSString *)key iv:(NSString *)iv;
 
 @end
