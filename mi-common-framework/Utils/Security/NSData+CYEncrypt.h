@@ -31,7 +31,7 @@
 - (NSData *)DESDecryptWithKey:(NSString *)key iv:(NSString *)iv;
 
 /**
- * AES(256)解密二进制数据
+ * AES(256)加密二进制数据
  * @param key 加密秘钥
  * @param iv    加密偏移量
  *
