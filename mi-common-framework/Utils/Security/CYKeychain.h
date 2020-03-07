@@ -6,12 +6,22 @@
 //  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
-#import "STKeychain.h"
+#import <Foundation/Foundation.h>
 
-@interface CYKeychain : STKeychain
+extern NSString * const CYKeychainErrorDomain;
+extern NSString * const CYKeychainErrorMessageKey;
+extern NSString * const CYKeychainErrorSecCodeKey;
 
-+ (NSString *)getPasswordForUsername:(NSString *)username error:(NSError **)error;
-+ (BOOL)storeUsername:(NSString *)username andPassword:(NSString *)password error:(NSError **)error;
-+ (BOOL)deleteItemForUsername:(NSString *)username error:(NSError **)error;
+typedef NS_ENUM(NSInteger, CYKeychainErrorCode) {
+    CYKeychainErrorCodeNotFound = -1998,
+    CYKeychainErrorCodeInvalidParams = -1999,
+    CYKeychainErrorCodeOperationFailed = -2000,
+};
+
+@interface CYKeychain : NSObject
+
++ (NSString *)getPasswordWithAccount:(NSString *)account error:(NSError **)error;
++ (BOOL)addPasswork:(NSString *)passwork withAccount:(NSString *)account error:(NSError **)error;
++ (BOOL)deletePasswordWithAccount:(NSString *)account error:(NSError **)error;
 
 @end

@@ -48,8 +48,6 @@
 		DE4E8DD61DBF08290067D2F1 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4E8DD41DBF08290067D2F1 /* NSDictionary+RequestEncoding.m */; };
 		DE5061D71D631CE900CC3445 /* SZTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5061D51D631CE900CC3445 /* SZTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE5061D81D631CE900CC3445 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5061D61D631CE900CC3445 /* SZTextView.m */; };
-		DE51416F1D54989300187EDA /* STKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = DE51416D1D54989300187EDA /* STKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE5141701D54989300187EDA /* STKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = DE51416E1D54989300187EDA /* STKeychain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DE52BC211CCE22ED001A0D3F /* UIColor+CYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE52BC201CCE22ED001A0D3F /* UIColor+CYAdditions.m */; };
 		DE52BC381CCF5B62001A0D3F /* UILabel+CYAddtions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE52BC371CCF5B62001A0D3F /* UILabel+CYAddtions.m */; };
 		DE52E3931D01844300907DDA /* CYCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = DE5F92881CCDAE8A009BECBF /* CYCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -329,8 +327,6 @@
 		DE4E8DD41DBF08290067D2F1 /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
 		DE5061D51D631CE900CC3445 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
 		DE5061D61D631CE900CC3445 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
-		DE51416D1D54989300187EDA /* STKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STKeychain.h; sourceTree = "<group>"; };
-		DE51416E1D54989300187EDA /* STKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STKeychain.m; sourceTree = "<group>"; };
 		DE52BC1F1CCE22ED001A0D3F /* UIColor+CYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIColor+CYAdditions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		DE52BC201CCE22ED001A0D3F /* UIColor+CYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIColor+CYAdditions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		DE52BC361CCF5B62001A0D3F /* UILabel+CYAddtions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CYAddtions.h"; sourceTree = "<group>"; };
@@ -648,15 +644,6 @@
 			path = SZTextView;
 			sourceTree = "<group>";
 		};
-		DE51416C1D54989300187EDA /* STKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				DE51416D1D54989300187EDA /* STKeychain.h */,
-				DE51416E1D54989300187EDA /* STKeychain.m */,
-			);
-			path = STKeychain;
-			sourceTree = "<group>";
-		};
 		DE5C42331E0396B100722013 /* PageSlideController */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,7 +809,6 @@
 				DE5F92091CCDAC3F009BECBF /* MBProgressHUD */,
 				DE5F920E1CCDAC3F009BECBF /* SDWebImage */,
 				DE5F922F1CCDAC3F009BECBF /* SVPullToRefresh */,
-				DE51416C1D54989300187EDA /* STKeychain */,
 				DE5061D41D631CE900CC3445 /* SZTextView */,
 				DE2515A81CF29E75000825BD /* Reachability */,
 				DE4E8DD21DBF08290067D2F1 /* RequestEncoding */,
@@ -1351,7 +1337,6 @@
 				DE52E3B11D01844300907DDA /* CYAlertController.h in Headers */,
 				DE7A38201D6C3FCE00393FC8 /* CYImageBrowserViewController.h in Headers */,
 				DE7A38221D6C3FCE00393FC8 /* CYImageDisplayView.h in Headers */,
-				DE51416F1D54989300187EDA /* STKeychain.h in Headers */,
 				DED8815F1D7D7B610013B409 /* CYMultiLineInputTableViewCell.h in Headers */,
 				DE2C417121E2EC5100E7B40A /* CYCountdownButton.h in Headers */,
 				DED881541D7D79370013B409 /* CYProfileItem.h in Headers */,
@@ -1527,7 +1512,6 @@
 				DE5F927D1CCDAC3F009BECBF /* UIButton+WebCache.m in Sources */,
 				DEA187D91EAA10DB00849B01 /* CYLabel.m in Sources */,
 				DEA7B7251F04A945000AF58A /* NJKWebViewProgressView.m in Sources */,
-				DE5141701D54989300187EDA /* STKeychain.m in Sources */,
 				DED881601D7D7B610013B409 /* CYMultiLineInputTableViewCell.m in Sources */,
 				DE5F92771CCDAC3F009BECBF /* SDWebImageCompat.m in Sources */,
 				DE2515A71CF29A04000825BD /* CYStateView.m in Sources */,
