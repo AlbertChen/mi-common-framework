@@ -54,7 +54,7 @@ NSString * const CYKeychainErrorSecCodeKey = @"secCode";
     return password;
 }
 
-+ (BOOL)addPasswork:(NSString *)passwork withAccount:(NSString *)account error:(NSError **)error {
++ (BOOL)storePassword:(NSString *)passwork withAccount:(NSString *)account error:(NSError **)error {
     if (!passwork || !account) {
         *error = [NSError errorWithDomain:CYKeychainErrorDomain
                                      code:CYKeychainErrorCodeInvalidParams
@@ -90,6 +90,7 @@ NSString * const CYKeychainErrorSecCodeKey = @"secCode";
         [attrs setObject:CYKeychainServiceName forKey:(__bridge id)kSecAttrLabel];
         [attrs setObject:account forKey:(__bridge id)kSecAttrAccount];
         [attrs setObject:[passwork dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
+        
         status = SecItemAdd((__bridge CFDictionaryRef)attrs, NULL);
     }
     

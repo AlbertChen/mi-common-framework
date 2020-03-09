@@ -21,7 +21,8 @@ typedef NS_ENUM(NSInteger, CYKeychainErrorCode) {
 @interface CYKeychain : NSObject
 
 + (NSString *)getPasswordWithAccount:(NSString *)account error:(NSError **)error;
-+ (BOOL)addPasswork:(NSString *)passwork withAccount:(NSString *)account error:(NSError **)error;
+// Add or Update
++ (BOOL)storePassword:(NSString *)passwork withAccount:(NSString *)account error:(NSError **)error;
 + (BOOL)deletePasswordWithAccount:(NSString *)account error:(NSError **)error;
 
 @end
