@@ -6,12 +6,12 @@
 //  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
 #import "CYViewController.h"
-#import "NJKWebViewProgress.h"
 
 @class CYWebViewController;
 
-@protocol CYWebViewController <NSObject>
+@protocol CYWebViewRequestItem <NSObject>
 
 @property (nonatomic, readonly) NSString *URLString;
 @property (nonatomic, readonly) NSString *originURLString;
@@ -26,25 +26,24 @@
 
 @end
 
-@interface CYWebViewController : CYViewController <UIWebViewDelegate, NSURLConnectionDelegate, NJKWebViewProgressDelegate>
+@interface CYWebViewController : CYViewController <WKNavigationDelegate, NSURLConnectionDelegate>
 
 @property (nonatomic, weak) id<CYWebViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSString *closeImage;
-@property (nonatomic, strong, readonly) id<CYWebViewController> object;
+@property (nonatomic, strong, readonly) id<CYWebViewRequestItem> requestItem;
 
-- (instancetype)initWithObject:(id<CYWebViewController>)object delegate:(id<CYWebViewControllerDelegate>)delegate;
-- (void)displayObject:(id<CYWebViewController>)object;
+- (instancetype)initWithRequestItem:(id<CYWebViewRequestItem>)requestItem delegate:(id<CYWebViewControllerDelegate>)delegate;
+- (void)loadRequestItem:(id<CYWebViewRequestItem>)requestItem;
 - (void)adjustTextSize:(NSInteger)textSize;
 
 @property (nonatomic, assign) CGFloat bottomMargin;
-@property (nonatomic, strong, readonly) UIWebView *webView;
-@property (nonatomic, strong, readonly) NJKWebViewProgress *progressProxy;
+@property (nonatomic, strong, readonly) WKWebView *webView;
 
 
 - (void)showPhotoBrowserWithURL:(NSURL *)URL;
 
 @end
 
-@interface NSString (CYWebViewController) <CYWebViewController>
+@interface NSString (CYWebViewRequestItem) <CYWebViewRequestItem>
 
 @end

@@ -67,6 +67,7 @@
 #import "CYImageBrowserViewController.h"
 #import "CYImageInfiniteSlideView.h"
 #import "CYPageSlideController.h"
+#import "CYWebViewProgressView.h"
 
 /**
  *  Vendor

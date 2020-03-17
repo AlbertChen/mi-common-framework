@@ -37,7 +37,7 @@
 		DE2B43F51CF59AFF00D96C35 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B43F41CF59AFF00D96C35 /* MobileCoreServices.framework */; };
 		DE2C417021E2EC5100E7B40A /* CYCountdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2C416E21E2EC5000E7B40A /* CYCountdownButton.m */; };
 		DE2C417121E2EC5100E7B40A /* CYCountdownButton.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2C416F21E2EC5000E7B40A /* CYCountdownButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DE3C43A023B34FC8003ACFB6 /* NSNumber+CYAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3C439E23B34FC8003ACFB6 /* NSNumber+CYAdditions.h */; };
+		DE3C43A023B34FC8003ACFB6 /* NSNumber+CYAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3C439E23B34FC8003ACFB6 /* NSNumber+CYAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE3C43A123B34FC8003ACFB6 /* NSNumber+CYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3C439F23B34FC8003ACFB6 /* NSNumber+CYAdditions.m */; };
 		DE4233D91F790CCA008DD06D /* CYExpandedView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4233D71F790CCA008DD06D /* CYExpandedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE4233DA1F790CCA008DD06D /* CYExpandedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4233D81F790CCA008DD06D /* CYExpandedView.m */; };
@@ -240,10 +240,6 @@
 		DEA61E501FA05E5700BFFB87 /* CYNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA61E4E1FA05E5700BFFB87 /* CYNotificationView.m */; };
 		DEA6D4D71EB9C44F00E0BCCD /* UIScreen+CYScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA6D4D51EB9C44F00E0BCCD /* UIScreen+CYScreenshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEA6D4D81EB9C44F00E0BCCD /* UIScreen+CYScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA6D4D61EB9C44F00E0BCCD /* UIScreen+CYScreenshot.m */; };
-		DEA7B7221F04A945000AF58A /* NJKWebViewProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA7B71E1F04A945000AF58A /* NJKWebViewProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEA7B7231F04A945000AF58A /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA7B71F1F04A945000AF58A /* NJKWebViewProgress.m */; };
-		DEA7B7241F04A945000AF58A /* NJKWebViewProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA7B7201F04A945000AF58A /* NJKWebViewProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEA7B7251F04A945000AF58A /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */; };
 		DEA8332321CB9B7B00423F35 /* CYCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA8332121CB9B7B00423F35 /* CYCacheManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEA8332421CB9B7B00423F35 /* CYCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DEA8332221CB9B7B00423F35 /* CYCacheManager.m */; };
 		DEA8342A21CCB47C00423F35 /* CYRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA8342821CCB47C00423F35 /* CYRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -254,6 +250,9 @@
 		DEC1E43F1EB1FA4200A92989 /* CYImageInfiniteSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC1E43D1EB1FA4200A92989 /* CYImageInfiniteSlideView.m */; };
 		DEC737D51F9F227C0030C2B1 /* UIWindow+CYAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC737D31F9F227C0030C2B1 /* UIWindow+CYAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEC737D61F9F227C0030C2B1 /* UIWindow+CYAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC737D41F9F227C0030C2B1 /* UIWindow+CYAdditions.m */; };
+		DEC842A224206A4F000668B8 /* CYWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC842A024206A4F000668B8 /* CYWebViewProgressView.m */; };
+		DEC842A324206A4F000668B8 /* CYWebViewProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = DEC842A124206A4F000668B8 /* CYWebViewProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEC842A524206B2C000668B8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC842A424206B2C000668B8 /* WebKit.framework */; };
 		DED881541D7D79370013B409 /* CYProfileItem.h in Headers */ = {isa = PBXBuildFile; fileRef = DED881521D7D79370013B409 /* CYProfileItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DED881551D7D79370013B409 /* CYProfileItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DED881531D7D79370013B409 /* CYProfileItem.m */; };
 		DED8815D1D7D7B610013B409 /* CYInputTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = DED881571D7D7B610013B409 /* CYInputTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -526,10 +525,6 @@
 		DEA61E4E1FA05E5700BFFB87 /* CYNotificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYNotificationView.m; sourceTree = "<group>"; };
 		DEA6D4D51EB9C44F00E0BCCD /* UIScreen+CYScreenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+CYScreenshot.h"; sourceTree = "<group>"; };
 		DEA6D4D61EB9C44F00E0BCCD /* UIScreen+CYScreenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+CYScreenshot.m"; sourceTree = "<group>"; };
-		DEA7B71E1F04A945000AF58A /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
-		DEA7B71F1F04A945000AF58A /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
-		DEA7B7201F04A945000AF58A /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
-		DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
 		DEA8332121CB9B7B00423F35 /* CYCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCacheManager.h; sourceTree = "<group>"; };
 		DEA8332221CB9B7B00423F35 /* CYCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCacheManager.m; sourceTree = "<group>"; };
 		DEA8342821CCB47C00423F35 /* CYRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYRouter.h; sourceTree = "<group>"; };
@@ -541,6 +536,9 @@
 		DEC4374B1CFD98BC008D88D8 /* CYTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYTypeDefine.h; sourceTree = "<group>"; };
 		DEC737D31F9F227C0030C2B1 /* UIWindow+CYAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CYAdditions.h"; sourceTree = "<group>"; };
 		DEC737D41F9F227C0030C2B1 /* UIWindow+CYAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CYAdditions.m"; sourceTree = "<group>"; };
+		DEC842A024206A4F000668B8 /* CYWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYWebViewProgressView.m; sourceTree = "<group>"; };
+		DEC842A124206A4F000668B8 /* CYWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYWebViewProgressView.h; sourceTree = "<group>"; };
+		DEC842A424206B2C000668B8 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DED881521D7D79370013B409 /* CYProfileItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYProfileItem.h; sourceTree = "<group>"; };
 		DED881531D7D79370013B409 /* CYProfileItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYProfileItem.m; sourceTree = "<group>"; };
 		DED881571D7D7B610013B409 /* CYInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYInputTableViewCell.h; sourceTree = "<group>"; };
@@ -564,6 +562,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC842A524206B2C000668B8 /* WebKit.framework in Frameworks */,
 				DE2B43F51CF59AFF00D96C35 /* MobileCoreServices.framework in Frameworks */,
 				DE5F93091CCDC346009BECBF /* QuartzCore.framework in Frameworks */,
 				DE5F93071CCDC341009BECBF /* Security.framework in Frameworks */,
@@ -600,6 +599,7 @@
 				DEA61E4C1FA05E1F00BFFB87 /* NotificationView */,
 				DE5C42331E0396B100722013 /* PageSlideController */,
 				DEEAAD4A21EB921600788041 /* StateView */,
+				DEC8429F24206A4F000668B8 /* WebViewProgressView */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -813,7 +813,6 @@
 				DE2515A81CF29E75000825BD /* Reachability */,
 				DE4E8DD21DBF08290067D2F1 /* RequestEncoding */,
 				DE764AE51D6FEFF9003CD9CE /* TTTAttributedLabel */,
-				DEA7B71D1F04A945000AF58A /* NJKWebViewProgress */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -1079,6 +1078,7 @@
 		DE5F92FB1CCDC2D4009BECBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEC842A424206B2C000668B8 /* WebKit.framework */,
 				DE2B43F41CF59AFF00D96C35 /* MobileCoreServices.framework */,
 				DE5F930A1CCDC38B009BECBF /* libsqlite3.0.tbd */,
 				DE5F93081CCDC346009BECBF /* QuartzCore.framework */,
@@ -1160,17 +1160,6 @@
 			path = NotificationView;
 			sourceTree = "<group>";
 		};
-		DEA7B71D1F04A945000AF58A /* NJKWebViewProgress */ = {
-			isa = PBXGroup;
-			children = (
-				DEA7B71E1F04A945000AF58A /* NJKWebViewProgress.h */,
-				DEA7B71F1F04A945000AF58A /* NJKWebViewProgress.m */,
-				DEA7B7201F04A945000AF58A /* NJKWebViewProgressView.h */,
-				DEA7B7211F04A945000AF58A /* NJKWebViewProgressView.m */,
-			);
-			path = NJKWebViewProgress;
-			sourceTree = "<group>";
-		};
 		DEC1E43B1EB1FA4200A92989 /* ImageInfiniteSlideView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1178,6 +1167,15 @@
 				DEC1E43D1EB1FA4200A92989 /* CYImageInfiniteSlideView.m */,
 			);
 			path = ImageInfiniteSlideView;
+			sourceTree = "<group>";
+		};
+		DEC8429F24206A4F000668B8 /* WebViewProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC842A124206A4F000668B8 /* CYWebViewProgressView.h */,
+				DEC842A024206A4F000668B8 /* CYWebViewProgressView.m */,
+			);
+			path = WebViewProgressView;
 			sourceTree = "<group>";
 		};
 		DED881561D7D7B610013B409 /* Input */ = {
@@ -1249,7 +1247,6 @@
 				DE52E3C81D01847B00907DDA /* DDASLLogger.h in Headers */,
 				DE52E3C91D01847B00907DDA /* DDAssertMacros.h in Headers */,
 				DE52E3CA1D01847B00907DDA /* DDFileLogger.h in Headers */,
-				DE3C43A023B34FC8003ACFB6 /* NSNumber+CYAdditions.h in Headers */,
 				DE9D994B1F034533006CEB2A /* NSDictionary+CYAdditions.h in Headers */,
 				DE52E3CB1D01847B00907DDA /* DDLegacyMacros.h in Headers */,
 				DE52E3CC1D01847B00907DDA /* DDLog+LOGV.h in Headers */,
@@ -1277,7 +1274,6 @@
 				DE52E3E11D01847B00907DDA /* SDWebImageManager.h in Headers */,
 				DE52E3E21D01847B00907DDA /* SDWebImageOperation.h in Headers */,
 				DE52E3E31D01847B00907DDA /* SDWebImagePrefetcher.h in Headers */,
-				DEA7B7241F04A945000AF58A /* NJKWebViewProgressView.h in Headers */,
 				DE1A1DCA1D067BC2001C4D84 /* CYNavigationController.h in Headers */,
 				DE52E3E41D01847B00907DDA /* UIButton+WebCache.h in Headers */,
 				DE52E3E51D01847B00907DDA /* UIImage+GIF.h in Headers */,
@@ -1314,7 +1310,6 @@
 				DE52E3A31D01844300907DDA /* UIColor+CYAdditions.h in Headers */,
 				DE52E3A41D01844300907DDA /* UILabel+CYAddtions.h in Headers */,
 				DE52E3A51D01844300907DDA /* NSString+CYAdditions.h in Headers */,
-				DEA7B7221F04A945000AF58A /* NJKWebViewProgress.h in Headers */,
 				DE52E3A61D01844300907DDA /* UIImage+CYAdditions.h in Headers */,
 				DE52E3A81D01844300907DDA /* UIAlertView+CYBlock.h in Headers */,
 				DE49F1031D485D0C00690AD4 /* UIImageView+CYWebImage.h in Headers */,
@@ -1356,6 +1351,8 @@
 				DE764AE81D6FEFF9003CD9CE /* TTTAttributedLabel.h in Headers */,
 				DE764AEC1D6FF0C3003CD9CE /* CYMultiLineTableViewCell.h in Headers */,
 				DEA834CD21CCD9F700423F35 /* CYPageScrollView.h in Headers */,
+				DE3C43A023B34FC8003ACFB6 /* NSNumber+CYAdditions.h in Headers */,
+				DEC842A324206A4F000668B8 /* CYWebViewProgressView.h in Headers */,
 				DE5A76331F7394EC0038AFF1 /* UISearchBar+CYAdditions.h in Headers */,
 				DE52E3B21D01844300907DDA /* CYStateView.h in Headers */,
 			);
@@ -1500,7 +1497,6 @@
 				DE5F92571CCDAC3F009BECBF /* AFImageDownloader.m in Sources */,
 				DE5F923C1CCDAC3F009BECBF /* CYTableViewCell.m in Sources */,
 				DE5F92621CCDAC3F009BECBF /* DDASLLogger.m in Sources */,
-				DEA7B7231F04A945000AF58A /* NJKWebViewProgress.m in Sources */,
 				DE5F92581CCDAC3F009BECBF /* AFNetworkActivityIndicatorManager.m in Sources */,
 				DE5F927C1CCDAC3F009BECBF /* SDWebImagePrefetcher.m in Sources */,
 				DE5F92831CCDAC3F009BECBF /* UIScrollView+SVInfiniteScrolling.m in Sources */,
@@ -1511,7 +1507,6 @@
 				DE5F92811CCDAC3F009BECBF /* UIImageView+WebCache.m in Sources */,
 				DE5F927D1CCDAC3F009BECBF /* UIButton+WebCache.m in Sources */,
 				DEA187D91EAA10DB00849B01 /* CYLabel.m in Sources */,
-				DEA7B7251F04A945000AF58A /* NJKWebViewProgressView.m in Sources */,
 				DED881601D7D7B610013B409 /* CYMultiLineInputTableViewCell.m in Sources */,
 				DE5F92771CCDAC3F009BECBF /* SDWebImageCompat.m in Sources */,
 				DE2515A71CF29A04000825BD /* CYStateView.m in Sources */,
@@ -1547,6 +1542,7 @@
 				DE5C423F1E0396B100722013 /* CYPageSlideBarButton.m in Sources */,
 				DE5F92501CCDAC3F009BECBF /* AFNetworkReachabilityManager.m in Sources */,
 				DE1A1DCB1D067BC2001C4D84 /* CYNavigationController.m in Sources */,
+				DEC842A224206A4F000668B8 /* CYWebViewProgressView.m in Sources */,
 				DE5F92451CCDAC3F009BECBF /* UIView+CYAdditions.m in Sources */,
 				DEA61E501FA05E5700BFFB87 /* CYNotificationView.m in Sources */,
 				DE5F927E1CCDAC3F009BECBF /* UIImage+GIF.m in Sources */,

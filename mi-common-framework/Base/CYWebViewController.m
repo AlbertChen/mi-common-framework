@@ -10,17 +10,15 @@
 #import "UIView+CYAdditions.h"
 #import "MBProgressHUD+CYConvenience.h"
 #import "UIBarButtonItem+CYAdditions.h"
-#import "NJKWebViewProgressView.h"
 #import "CYImageBrowserViewController.h"
+#import "CYWebViewProgressView.h"
 
 @interface CYWebViewController () <UIWebViewDelegate, NSURLConnectionDataDelegate>
 
-@property (nonatomic, strong, readwrite) UIWebView *webView;
+@property (nonatomic, strong, readwrite) WKWebView *webView;
 @property (nonatomic, weak) NSLayoutConstraint *webViewBottomLC;
-@property (nonatomic, strong, readwrite) NJKWebViewProgress *progressProxy;
-@property (nonatomic, strong) NJKWebViewProgressView *progressView;
 
-@property (nonatomic, strong, readwrite) id<CYWebViewController> object;
+@property (nonatomic, strong, readwrite) id<CYWebViewRequestItem> requestItem;
 
 @end
 
@@ -40,45 +38,28 @@
     }
 }
 
-- (UIWebView *)webView {
+- (WKWebView *)webView {
     if (_webView == nil) {
-        _webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+        CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0);
+        _webView = [[WKWebView alloc] initWithFrame:frame];
         _webView.translatesAutoresizingMaskIntoConstraints = NO;
-        _webView.scalesPageToFit = YES;
-        _webView.delegate = self;
+//        _webView.scalesPageToFit = YES;
+        _webView.navigationDelegate = self;
+        
+        frame.size.height = 2.0;
+        CYWebViewProgressView *progressView = [[CYWebViewProgressView alloc] initWithFrame:frame];
+        _webView.progressView = progressView;
     }
     
     return _webView;
 }
 
-- (NJKWebViewProgress *)progressProxy {
-    if (_progressProxy == nil) {
-        _progressProxy = [[NJKWebViewProgress alloc] init];
-        _progressProxy.webViewProxyDelegate = self;
-        _progressProxy.progressDelegate = self;
-    }
-    
-    return _progressProxy;
-}
-
-- (NJKWebViewProgressView *)progressView {
-    if (_progressView == nil) {
-        CGFloat progressBarHeight = 2.f;
-        CGRect barFrame = CGRectMake(0.0, 0.0, self.view.bounds.size.width, progressBarHeight);
-        _progressView = [[NJKWebViewProgressView alloc] initWithFrame:barFrame];
-        _progressView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-        _progressView.progress = 0.0;
-    }
-    
-    return _progressView;
-}
-
 #pragma mark - Init
 
-- (instancetype)initWithObject:(id<CYWebViewController>)object delegate:(id<CYWebViewControllerDelegate>)delegate {
+- (instancetype)initWithRequestItem:(id<CYWebViewRequestItem>)item delegate:(id<CYWebViewControllerDelegate>)delegate {
     self = [self initWithNibName:nil bundle:nil];
     if (self != nil) {
-        _object = object;
+        _requestItem = item;
         _delegate = delegate;
     }
     
@@ -87,7 +68,7 @@
 
 - (void)dealloc {
     self.delegate = nil;
-    self.webView.delegate = nil;
+    self.webView.navigationDelegate = nil;
     [self.webView stopLoading];
 }
 
@@ -96,25 +77,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.webView.delegate = self.progressProxy;
     [self.view insertSubview:self.webView belowSubview:self.stateView];
     [self setupViewConstraints];
     
-    if (self.object != nil) {
-        [self displayObject:self.object];
+    if (self.requestItem != nil) {
+        [self loadRequestItem:self.requestItem];
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.view addSubview:self.progressView];
-}
-
--(void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [self.progressView removeFromSuperview];
 }
 
 #pragma mark - Constraints
@@ -143,7 +111,7 @@
 }
 
 - (IBAction)stateViewTapped:(CYStateViewState)type {
-    [self displayObject:self.object];
+    [self loadRequestItem:self.requestItem];
 }
 
 // URL schema: img://onclick?src=xxx&srcs=xxx,xxx...
@@ -169,12 +137,12 @@
 
 #pragma mark - Public Methods
 
-- (void)displayObject:(id<CYWebViewController>)object {
-    if (object == nil) return;
+- (void)loadRequestItem:(id<CYWebViewRequestItem>)requestItem {
+    if (requestItem == nil) return;
     
-    _object = object;
+    _requestItem = requestItem;
     
-    NSURL *url = [NSURL URLWithString:[object URLString]];
+    NSURL *url = [NSURL URLWithString:[requestItem URLString]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     if ([self.delegate respondsToSelector:@selector(webViewController:willSendRequest:)]) {
         [self.delegate webViewController:self willSendRequest:request];
@@ -184,35 +152,38 @@
 
 - (void)adjustTextSize:(NSInteger)textSize {
     NSString *jsString = [[NSString alloc] initWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust = '%@%%'", @(textSize)];
-    [self.webView stringByEvaluatingJavaScriptFromString:jsString];
+    [self.webView evaluateJavaScript:jsString completionHandler:NULL];
 }
 
-#pragma mark - UIWebViewDelegate
+#pragma mark - WKNavigationDelegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSURLRequest *request = navigationAction.request;
+    WKNavigationActionPolicy policy = WKNavigationActionPolicyAllow;
     if ([request.URL.absoluteString hasPrefix:@"tel:"]) {
         [[UIApplication sharedApplication] openURL:request.URL];
-        return NO;
+        policy = WKNavigationActionPolicyCancel;
     } else if ([request.URL.absoluteString hasPrefix:@"mailto:"]) {
         [[UIApplication sharedApplication] openURL:request.URL];
-        return NO;
+        policy = WKNavigationActionPolicyCancel;
     } else if ([request.URL.absoluteString hasPrefix:@"img://onclick"]) {
         [self showPhotoBrowserWithURL:request.URL];
-        return NO;
+        policy = WKNavigationActionPolicyCancel;
     }
-    
-    return YES;
+    decisionHandler(policy);
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     if (self.title == nil) {
         self.title = NSLocalizedString(@"Loading...", @"");
     }
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     if ([self.title isEqualToString:NSLocalizedString(@"Loading...", @"")]) {
-        self.title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+        [self.webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable title, NSError * _Nullable error) {
+            self.title = title;
+        }];
     }
     
     if ([webView canGoBack]) {
@@ -237,26 +208,21 @@
     });
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     if ([error code] == NSURLErrorCancelled) return;
 
     NSString *failingURLString = [error.userInfo valueForKey:NSURLErrorFailingURLStringErrorKey];
-    NSString *targetURLString = webView.request.URL.absoluteString.length > 0 ?  webView.request.URL.absoluteString : [self.object URLString];
+    NSString *targetURLString = webView.URL.absoluteString.length > 0 ?  webView.URL.absoluteString : [self.requestItem URLString];
     if ([failingURLString isEqualToString:targetURLString]) {
         self.stateView.state = CYStateViewStateError;
     }
-//     TODO: Show error message
-}
-
-#pragma mark - NJKWebViewProgressDelegate
-
-- (void)webViewProgress:(NJKWebViewProgress *)webViewProgress updateProgress:(float)progress {
-    [self.progressView setProgress:progress animated:YES];
+    
+    // TODO: Show error message
 }
 
 @end
 
-@implementation NSString (CYWebViewController)
+@implementation NSString (CYWebViewRequestItem)
 
 - (NSString *)URLString {
     return self;

@@ -66,7 +66,7 @@
 #pragma mark - TTTAttributedLabelDelegate
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
-    CYWebViewController *webViewController = [[CYWebViewController alloc] initWithObject:url.absoluteString delegate:nil];
+    CYWebViewController *webViewController = [[CYWebViewController alloc] initWithRequestItem:url.absoluteString delegate:nil];
     [self.navigationController pushViewController:webViewController animated:YES];
 }
 
