@@ -20,7 +20,7 @@
 }
 
 + (NSString *)cellIdentifier {
-    return [NSStringFromClass([self class]) componentsSeparatedByString:@","].lastObject;
+    return [NSStringFromClass([self class]) componentsSeparatedByString:@"."].lastObject;
 }
 
 @end
