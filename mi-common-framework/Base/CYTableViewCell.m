@@ -59,7 +59,7 @@
 + (CGFloat)cellHeightWithFixedRatio:(BOOL)fixedRatio constrainedToWidth:(CGFloat)width {
     static CYTableViewCell *cell = nil;
     if (cell == nil  || ![cell isMemberOfClass:[self class]]) {
-        cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:[self cellIdentifier] owner:nil options:nil].firstObject;
     }
     
     CGFloat height = CGRectGetHeight(cell.frame);
@@ -89,7 +89,7 @@
 + (CGFloat)cellFittingHeightWithContent:(id)content constrainedToWidth:(CGFloat)width ignoreContent:(BOOL)ignore {
     static CYTableViewCell *cell = nil;
     if (cell == nil || ![cell isMemberOfClass:[self class]]) {
-        cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:[self cellIdentifier] owner:nil options:nil].firstObject;
         CGRect frame = cell.frame;
         frame.size.width = width;
         cell.frame = frame;
@@ -107,7 +107,7 @@
 }
 
 + (NSString *)cellIdentifier {
-    return NSStringFromClass([self class]);
+    return [NSStringFromClass([self class]) componentsSeparatedByString:@"."].lastObject;
 }
 
 + (CYTableViewCellPosition)positionForIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView {

@@ -13,14 +13,14 @@
 + (CGFloat)cellHeight {
     static UICollectionViewCell *cell = nil;
     if (cell == nil  || ![cell isMemberOfClass:[self class]]) {
-        cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:[self cellIdentifier] owner:nil options:nil].firstObject;
     }
     
     return CGRectGetHeight(cell.frame);
 }
 
 + (NSString *)cellIdentifier {
-    return NSStringFromClass([self class]);
+    return [NSStringFromClass([self class]) componentsSeparatedByString:@","].lastObject;
 }
 
 @end

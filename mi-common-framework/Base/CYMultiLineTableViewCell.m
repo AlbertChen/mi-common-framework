@@ -39,7 +39,7 @@
     CGFloat height = 0.0;
     static CYMultiLineTableViewCell *cell = nil;
     if (cell == nil || ![cell isKindOfClass:[self class]]) {
-        cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil].firstObject;
+        cell = [[NSBundle mainBundle] loadNibNamed:[self cellIdentifier] owner:nil options:nil].firstObject;
     }
     
     if (text.length == 0) {
