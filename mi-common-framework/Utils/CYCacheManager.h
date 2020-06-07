@@ -23,4 +23,11 @@ extern NSString * const CYCacheManagerDidClearNotification;
 - (NSData *)getDataWithFileName:(NSString *)fileName userID:(NSString *)userID;
 - (void)saveData:(NSData *)date withFileName:(NSString *)fileName userID:(NSString *)userID;
 
+- (id<NSCoding>)getObjectWithClass:(Class)clazz userID:(NSString *)userID;
+- (id<NSCoding>)getObjectWithFileName:(NSString *)fileName userID:(NSString *)userID;
+- (void)saveObject:(id<NSCoding>)object userID:(NSString *)userID;
+- (void)saveObject:(id<NSCoding>)object withFileName:(NSString *)fileName userID:(NSString *)userID;
+
+- (void)removeItemWithFileName:(NSString *)fileName userID:(NSString *)userID;
+
 @end

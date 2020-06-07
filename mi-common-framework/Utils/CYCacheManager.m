@@ -68,7 +68,7 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
 
 - (void)clear {
     // Image
-    [[SDWebImageManager sharedManager].imageCache clearDisk];
+    [[SDWebImageManager sharedManager].imageCache clearDiskOnCompletion:NULL];
     // DB
     [CYDatabaseStore clearData];
     
@@ -137,6 +137,61 @@ NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNo
     });
     
     return data;
+}
+
+- (void)saveObject:(id<NSCoding>)object userID:(NSString *)userID {
+    NSString *fileName = NSStringFromClass([(NSObject *)object class]);
+    [self saveObject:object withFileName:fileName userID:userID];
+}
+
+- (void)saveObject:(id<NSCoding>)object withFileName:(NSString *)fileName userID:(NSString *)userID {
+    NSAssert(object != nil, @"dataModel can not be nil.");
+    NSAssert(fileName != nil, @"fileName can not be nil.");
+    
+    NSData *data = nil;
+    @try {
+        data = [NSKeyedArchiver archivedDataWithRootObject:object];
+    }
+    @catch (NSException *exception) {
+        CYLogSerious(@"[Cache Manager] Failed to save object, fileName: %@, error:%@", fileName, exception);
+    }
+    if (!data) return;
+    [self saveData:data withFileName:fileName userID:userID];
+}
+
+- (id<NSCoding>)getObjectWithClass:(Class)clazz userID:(NSString *)userID {
+    return [self getObjectWithFileName:NSStringFromClass(clazz) userID:userID];
+}
+
+- (id<NSCoding>)getObjectWithFileName:(NSString *)fileName userID:(NSString *)userID {
+    NSData *data = [self getDataWithFileName:fileName userID:userID];
+    id object = nil;
+    @try {
+        object = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
+    @catch (NSException *exception) {
+        CYLogSerious(@"[Cache Manager] Failed to get object, fileName: %@, error:%@", fileName, exception);
+    }
+    return object;
+}
+
+- (void)removeItemWithFileName:(NSString *)fileName userID:(NSString *)userID {
+    NSAssert(fileName != nil, @"fileName can not be nil.");
+    
+    NSString *relativePath = nil;
+    if (userID == nil) {
+        relativePath = fileName;
+    } else {
+        relativePath = [NSString stringWithFormat:@"%@/%@", userID, fileName];
+    }
+    NSString *path = [self.cachedFolderPath stringByAppendingPathComponent:relativePath];
+    dispatch_sync(self.ioQueue, ^{
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+        if (error) {
+            CYLogSerious(@"[Cache Manager] Failed to remove object, fileName: %@, error:%@", fileName, error);
+        }
+    });
 }
 
 @end
