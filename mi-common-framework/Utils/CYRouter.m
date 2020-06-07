@@ -56,6 +56,19 @@
     return [self viewControllerInNavigationStack:controllerClass] != nil;
 }
 
+- (NSInteger)indexOfViewControllerInNavigationStack:(Class)controllerClass {
+    NSArray *viewControllers = self.currentViewController.navigationController.viewControllers;
+    NSInteger count = viewControllers.count;
+    for (int i = 0; i < count; i++) {
+        NSInteger index = count - 1 - i;
+        UIViewController *viewController = viewControllers[index];
+        if ([viewController isKindOfClass:controllerClass]) {
+            return index;
+        }
+    }
+    return NSNotFound;
+}
+
 - (UIViewController *)viewControllerInNavigationStack:(Class)controllerClass {
     NSArray *viewControllers = self.currentViewController.navigationController.viewControllers;
     int count = viewControllers.count;

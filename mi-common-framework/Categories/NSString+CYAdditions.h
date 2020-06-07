@@ -10,6 +10,7 @@
 
 @interface NSString (CYAdditions)
 
+- (NSString *)trimmedString;
 + (BOOL)isEmpty:(NSString *)string;
 
 - (BOOL)isMatchedRegExp:(NSString *)regExp;

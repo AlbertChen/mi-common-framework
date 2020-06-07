@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#define HEXCOLOR(h)    HEXACOLOR(h, 1.0)
-#define HEXACOLOR(h, a) [UIColor colorWithHexString:(h) alpha:(a)]
+#define HEX_COLOR(h)        HEXA_COLOR(h, 1.0)
+#define HEXA_COLOR(h, a)    [UIColor colorWithHexString:(h) alpha:(a)]
 
 @interface UIColor (CYAdditions)
 

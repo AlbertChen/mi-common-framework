@@ -22,6 +22,7 @@
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated;
 
 - (BOOL)canPopToViewController:(Class)controllerClass;
+- (NSInteger)indexOfViewControllerInNavigationStack:(Class)controllerClass;
 - (UIViewController *)viewControllerInNavigationStack:(Class)controllerClass;
 
 // Present
