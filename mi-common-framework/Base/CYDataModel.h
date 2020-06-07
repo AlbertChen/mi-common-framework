@@ -17,14 +17,17 @@
 
 @end
 
-@interface CYDataModel : NSObject <NSCopying>
+@interface CYDataModel : NSObject <NSCoding, NSCopying>
 
 + (NSArray<CYDataModelClassProperty *> *)writeableProperties;
 + (NSArray *)objectsWithAttribuesArray:(NSArray *)attributesArray;
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 - (void)updateAttributes:(NSDictionary *)attributes;
-
 - (void)updateAttributesWithModel:(CYDataModel *)model;
+
+- (NSDictionary *)JSONObject;
+- (NSData *)JSONData;
+- (NSString *)JSONString;
 
 @end

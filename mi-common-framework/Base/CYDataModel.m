@@ -23,9 +23,16 @@ static NSArray * data_model_allowed_standard_property_types () {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         cy_data_model_allowed_standard_property_types = @[
-                                                          [NSString class], [NSNumber class], [NSDecimalNumber class], [NSArray class], [NSDictionary class], [NSNull class], //immutable JSON classes
-                                                          [NSMutableString class], [NSMutableArray class], [NSMutableDictionary class] //mutable JSON classes
-                                                          ];
+            [NSString class],
+            [NSNumber class],
+            [NSDecimalNumber class],
+            [NSArray class],
+            [NSDictionary class], // immutable JSON classes
+            [NSNull class],
+            [NSMutableString class],
+            [NSMutableArray class],
+            [NSMutableDictionary class] // mutable JSON classes
+        ];
     });
     
     return cy_data_model_allowed_standard_property_types;
@@ -163,6 +170,57 @@ static NSArray * data_model_allowed_standard_property_types () {
         }
     }
 }
+
+- (NSDictionary *)JSONObject {
+    NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:0];
+    for (CYDataModelClassProperty *property in [[self class] writeableProperties]) {
+        [result setValue:[self valueForKey:property.name] forKey:property.name];
+    }
+    return [result copy];
+}
+
+- (NSData *)JSONData {
+    NSDictionary *object = [self JSONObject];
+    NSError *error = nil;
+    NSData *data = [NSJSONSerialization dataWithJSONObject:object
+                                                   options:0 // non-pretty printing
+                                                     error:&error];
+    if (error) {
+      NSLog(@"JSON Parsing Error: %@", error);
+    }
+    
+    return data;
+}
+
+- (NSString *)JSONString {
+    NSData *data = [self JSONData];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+#pragma mark - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (aDecoder == nil || [aDecoder isEqual:[NSNull null]]) return nil;
+    
+    self = [super init];
+    if (self) {
+        for (CYDataModelClassProperty *property in [[self class] writeableProperties]) {
+            [self setValue:[aDecoder decodeObjectForKey:property.name] forKey:property.name];
+        }
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    if (aCoder == nil || [aCoder isEqual:[NSNull null]]) return;
+    
+    for (CYDataModelClassProperty *property in [[self class] writeableProperties]) {
+        [aCoder setValue:[self valueForKey:property.name] forKey:property.name];
+    }
+}
+
+#pragma mark - NSCopying
 
 - (id)copyWithZone:(nullable NSZone *)zone {
     id newModel = [[[self class] alloc] init];
