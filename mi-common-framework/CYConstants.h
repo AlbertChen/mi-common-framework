@@ -41,8 +41,8 @@ TODO_DEFER_STRINGIFY(__FILE__) " line " TODO_DEFER_STRINGIFY(__LINE__)
 /**
  *  Color
  */
-#define RGBCOLOR(r,g,b)     RGBACOLOR(r,g,b,1.0)
-#define RGBACOLOR(r,g,b,a)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
+#define RGB_COLOR(r,g,b)    RGBA_COLOR(r,g,b,1.0)
+#define RGBA_COLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
 /**
  *  Device info

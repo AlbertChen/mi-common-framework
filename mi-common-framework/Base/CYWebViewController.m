@@ -13,7 +13,7 @@
 #import "CYImageBrowserViewController.h"
 #import "CYWebViewProgressView.h"
 
-@interface CYWebViewController () <UIWebViewDelegate, NSURLConnectionDataDelegate>
+@interface CYWebViewController ()
 
 @property (nonatomic, strong, readwrite) WKWebView *webView;
 @property (nonatomic, weak) NSLayoutConstraint *webViewBottomLC;
@@ -187,7 +187,7 @@
     }
     
     if ([webView canGoBack]) {
-        if (self.navigationItem.leftBarButtonItems.count < 2) {
+        if (self.navigationItem.leftBarButtonItems != nil &&  self.navigationItem.leftBarButtonItems.count < 2) {
             UIBarButtonItem *closeBarButtonItem = [UIBarButtonItem itemWithImage:self.closeImage target:self selector:@selector(closeButtonPressed:)];
             self.navigationItem.leftBarButtonItems = @[self.navigationItem.leftBarButtonItem, closeBarButtonItem];
         }

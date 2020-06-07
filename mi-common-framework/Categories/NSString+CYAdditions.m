@@ -50,30 +50,11 @@
 
 + (NSComparisonResult)compareVersion:(NSString *)version1 toVersion:(NSString *)version2 {
     NSComparisonResult result = NSOrderedSame;
-    if ([version1 isEqualToString:version2]) {
-        result = NSOrderedSame;
+    if (version1 == nil) {
+        result = version2 == nil ? NSOrderedSame : NSOrderedAscending;
     } else {
-        NSArray *components1 = [version1 componentsSeparatedByString:@"."];
-        NSArray *components2 = [version2 componentsSeparatedByString:@"."];
-        if (components1.count == 0) {
-            result = NSOrderedAscending;
-        } else if (components2.count == 0) {
-            result = NSOrderedDescending;
-        } else {
-            for (int i = 0; i < components1.count; i++) {
-                NSInteger item1 = [components1[i] integerValue];
-                NSInteger item2 = components2.count > i ? [components2[i] integerValue] : -1;
-                if (item1 > item2) {
-                    result = NSOrderedDescending;
-                    break;
-                } else if (item1 < item2) {
-                    result = NSOrderedAscending;
-                    break;
-                }
-            }
-        }
+        result = [version1 compare:version2 options:NSNumericSearch];
     }
-    
     return result;
 }
 

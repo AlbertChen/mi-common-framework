@@ -59,8 +59,8 @@
 {
     self.titleFont = [UIFont systemFontOfSize:17];
     self.detailFont = [UIFont systemFontOfSize:14];
-    self.titleColor = RGBCOLOR(51, 51, 51);
-    self.detailColor = RGBCOLOR(167, 174, 175);
+    self.titleColor = RGB_COLOR(51, 51, 51);
+    self.detailColor = RGB_COLOR(167, 174, 175);
     self.iconBottomGap = 0.0;
     self.state = CYStateViewStateNone;
     self.titleData = @{}.mutableCopy;
