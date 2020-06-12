@@ -223,7 +223,7 @@ static NSArray * data_model_allowed_standard_property_types () {
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(nullable NSZone *)zone {
-    id newModel = [[[self class] alloc] init];
+    id newModel = [[[self class] allocWithZone:zone] init];
     for (CYDataModelClassProperty *property in [[self class] writeableProperties]) {
         [newModel setValue:[self valueForKey:property.name] forKey:property.name];
     }

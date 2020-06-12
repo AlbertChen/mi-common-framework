@@ -17,7 +17,58 @@
                     cancelButtonTitle:(NSString *)cancelButtonTitle
                      otherButtonTitle:(NSString *)otherButtonTitle
                            completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    return [[self class] presentFromController:controller
+                                         style:UIAlertControllerStyleAlert
+                                         title:title
+                                       message:message
+                             cancelButtonTitle:cancelButtonTitle
+                              otherButtonTitle:otherButtonTitle
+                                    completion:completion];
+}
+
++ (instancetype)presentFromController:(UIViewController *)controller
+                                style:(UIAlertControllerStyle)style
+                                title:(NSString *)title
+                              message:(NSString *)message
+                    cancelButtonTitle:(NSString *)cancelButtonTitle
+                     otherButtonTitle:(NSString *)otherButtonTitle
+                           completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion {
+    NSArray *otherButtonTitles = nil;
+    if (![NSString isEmpty:otherButtonTitle]) {
+        otherButtonTitles = @[otherButtonTitle];
+    }
+    return [[self class] presentFromController:controller
+                                         style:style
+                                         title:title
+                                       message:message
+                             cancelButtonTitle:cancelButtonTitle
+                             otherButtonTitles:otherButtonTitles
+                                    completion:completion];
+}
+
++ (instancetype)presentFromController:(UIViewController *)controller
+                                title:(NSString *)title
+                              message:(NSString *)message
+                    cancelButtonTitle:(NSString *)cancelButtonTitle
+                    otherButtonTitles:(NSArray<NSString *> *)otherButtonTitles
+                           completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion {
+    return [[self class] presentFromController:controller
+                                         style:UIAlertControllerStyleAlert
+                                         title:title
+                                       message:message
+                             cancelButtonTitle:cancelButtonTitle
+                             otherButtonTitles:otherButtonTitles
+                                    completion:completion];
+}
+
++ (instancetype)presentFromController:(UIViewController *)controller
+                                style:(UIAlertControllerStyle)style
+                                title:(NSString *)title
+                              message:(NSString *)message
+                    cancelButtonTitle:(NSString *)cancelButtonTitle
+                    otherButtonTitles:(NSArray<NSString *> *)otherButtonTitles
+                           completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:style];
     
     if (![NSString isEmpty:cancelButtonTitle]) {
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
@@ -27,10 +78,11 @@
         }];
         [alertController addAction:cancelAction];
     }
-    if (![NSString isEmpty:otherButtonTitle]) {
-        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+    for (int i = 0; i < otherButtonTitles.count; i++) {
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitles[i] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (completion != nil) {
-                completion(alertController, 1);
+                completion(alertController, i + 1);
             }
         }];
         [alertController addAction:otherAction];

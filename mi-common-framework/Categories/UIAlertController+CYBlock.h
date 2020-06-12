@@ -17,4 +17,27 @@
                      otherButtonTitle:(NSString *)otherButtonTitle
                            completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion;
 
++ (instancetype)presentFromController:(UIViewController *)controller
+                                title:(NSString *)title
+                              message:(NSString *)message
+                    cancelButtonTitle:(NSString *)cancelButtonTitle
+                    otherButtonTitles:(NSArray<NSString *> *)otherButtonTitles
+                           completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion;
+
++ (instancetype)presentFromController:(UIViewController *)controller
+                                style:(UIAlertControllerStyle)style
+                                title:(NSString *)title
+                              message:(NSString *)message
+                    cancelButtonTitle:(NSString *)cancelButtonTitle
+                     otherButtonTitle:(NSString *)otherButtonTitle
+                           completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion;
+
++ (instancetype)presentFromController:(UIViewController *)controller
+                                style:(UIAlertControllerStyle)style
+                                title:(NSString *)title
+                              message:(NSString *)message
+                    cancelButtonTitle:(NSString *)cancelButtonTitle
+                    otherButtonTitles:(NSArray<NSString *> *)otherButtonTitles
+                           completion:(void (^)(UIAlertController *alertController, NSUInteger selectedIndex))completion;
+
 @end

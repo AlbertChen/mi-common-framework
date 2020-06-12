@@ -67,9 +67,9 @@
 }
 
 - (void)dealloc {
-    self.delegate = nil;
-    self.webView.navigationDelegate = nil;
-    [self.webView stopLoading];
+    _delegate = nil;
+    _webView.navigationDelegate = nil;
+    [_webView stopLoading];
 }
 
 #pragma mark - View Lifecycle

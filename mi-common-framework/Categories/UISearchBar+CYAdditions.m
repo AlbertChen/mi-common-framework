@@ -28,7 +28,12 @@
 }
 
 - (UITextField *)textField {
-    UITextField *textField = [self textFieldInView:self];
+    UITextField *textField = nil;
+    if (@available(iOS 13.0, *)) {
+        textField = self.searchTextField;
+    } else {
+        textField = [self textFieldInView:self];
+    }
     return textField;
 }
 
