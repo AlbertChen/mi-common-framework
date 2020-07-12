@@ -24,7 +24,9 @@
 
 - (instancetype)initWithAttributes:(NSDictionary *)attributes;
 - (void)updateAttributes:(NSDictionary *)attributes;
+
 - (void)updateAttributesWithModel:(CYDataModel *)model;
+- (void)updateAttributesWithModel:(CYDataModel *)model ignoreNilValue:(BOOL)ignoreNilValue;
 
 - (NSDictionary *)JSONObject;
 - (NSData *)JSONData;

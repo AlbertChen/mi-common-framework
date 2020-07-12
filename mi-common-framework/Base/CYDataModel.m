@@ -163,10 +163,18 @@ static NSArray * data_model_allowed_standard_property_types () {
 }
 
 - (void)updateAttributesWithModel:(CYDataModel *)model {
+    [self updateAttributesWithModel:model ignoreNilValue:NO];
+}
+
+- (void)updateAttributesWithModel:(CYDataModel *)model ignoreNilValue:(BOOL)ignoreNilValue {
     NSArray *properties = [[self class] writeableProperties];
     for (CYDataModelClassProperty *property in properties) {
         if ([model respondsToSelector:NSSelectorFromString(property.name)]) {
-            [self setValue:[model valueForKey:property.name] forKey:property.name];
+            id value = [model valueForKey:property.name];
+            if ((value == nil || [value isEqual:[NSNull null]]) && ignoreNilValue) continue;
+            if ([value isKindOfClass:[NSString class]] && [value length] == 0 && ignoreNilValue) continue;
+            
+            [self setValue:value forKey:property.name];
         }
     }
 }
