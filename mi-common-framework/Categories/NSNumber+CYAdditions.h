@@ -10,6 +10,14 @@
 
 @interface NSNumber (CYAdditions)
 
++ (NSNumber *)numberWithBinaryString:(NSString *)binaryString;
+- (NSString *)binaryString;
+
++ (NSNumber *)numberWithHexString:(NSString *)hexString;
+- (NSString *)hexString;
+
+#pragma mark -
+
 // Round
 - (NSString *)stringWithDecimalDigits:(NSUInteger)digits;
 - (NSString *)stringWithDecimalDigits:(NSUInteger)digits shrinkTimes:(NSInteger)shrinkTimes;

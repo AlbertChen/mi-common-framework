@@ -10,6 +10,50 @@
 
 @implementation NSNumber (CYAdditions)
 
++ (NSNumber *)numberWithBinaryString:(NSString *)binaryString {
+    if (!binaryString || [binaryString length] == 0) {
+        return nil;
+    }
+    
+    long long result = 0;
+    for (int i = 0; i < binaryString.length; i++) {
+        int num = [[binaryString substringWithRange:NSMakeRange(binaryString.length - 1 - i, 1)] intValue];
+        result += num * powl(2, i);
+    }
+    
+    return @(result);
+}
+
+- (NSString *)binaryString {
+    NSString *result = @"" ;
+    long long x = self.longLongValue;
+    while (x > 0) {
+        result = [[NSString stringWithFormat: @"%lld", x&1] stringByAppendingString:result];
+        x = x >> 1;
+    }
+    
+    return result;
+}
+
++ (NSNumber *)numberWithHexString:(NSString *)hexString {
+    if (!hexString || [hexString length] == 0) {
+        return nil;
+    }
+    
+    unsigned long long result = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:0];
+    [scanner scanHexLongLong:&result];
+    
+    return @(result);
+}
+
+- (NSString *)hexString {
+    return [NSString stringWithFormat:@"%2llX", self.unsignedLongLongValue];
+}
+
+#pragma mark -
+
 - (NSString *)stringWithDecimalDigits:(NSUInteger)digits {
     return [self stringWithDecimalDigits:digits shrinkTimes:1];
 }
@@ -40,7 +84,11 @@
         result = @((NSInteger)num).stringValue;
     } else {
         double times = pow(10, digits);
-        num = floor(times * num) / times;
+        if (num < 0) {
+            num = ceil(times * num) / times;
+        } else {
+            num = floor(times * num) / times;
+        }
         
         result = [@(num) stringWithDecimalDigits:digits];
     }
