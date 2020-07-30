@@ -224,7 +224,7 @@ static NSArray * data_model_allowed_standard_property_types () {
     if (aCoder == nil || [aCoder isEqual:[NSNull null]]) return;
     
     for (CYDataModelClassProperty *property in [[self class] writeableProperties]) {
-        [aCoder setValue:[self valueForKey:property.name] forKey:property.name];
+        [aCoder encodeObject:[self valueForKey:property.name] forKey:property.name];
     }
 }
 
