@@ -3,7 +3,7 @@
 //  mi-common-framework
 //
 //  Created by Chen Yiliang on 16/4/28.
-//  Copyright © 2016年 Chen Yiliang. All rights reserved.
+//  Copyright © 2016 Chen Yiliang. All rights reserved.
 //
 
 #import "UIImage+CYAdditions.h"
@@ -104,14 +104,22 @@
     return [UIImage imageWithColor:color size:CGSizeMake(10, 10)];
 }
 
++ (UIImage *)imageWithColor:(UIColor *)color alpha:(CGFloat)alpha {
+    return [UIImage imageWithColor:color size:CGSizeMake(10, 10) alpha:alpha];
+}
+
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    return [UIImage imageWithColor:color size:size alpha:1.0];
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size alpha:(CGFloat)alpha {
     UIImage *img = nil;
     
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context,
-                                   color.CGColor);
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextSetAlpha(context, alpha);
     CGContextFillRect(context, rect);
     
     img = UIGraphicsGetImageFromCurrentImageContext();
