@@ -68,6 +68,7 @@
 
 - (void)dealloc {
     _delegate = nil;
+    _webView.progressView = nil;
     _webView.navigationDelegate = nil;
     [_webView stopLoading];
 }

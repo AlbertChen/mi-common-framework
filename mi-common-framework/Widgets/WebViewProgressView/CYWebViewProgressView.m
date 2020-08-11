@@ -108,8 +108,11 @@
 }
 
 - (void)setProgressView:(CYWebViewProgressView *)progressView {
-    [self addSubview:progressView];
-    [progressView setWebView:self];
+    [self.progressView removeFromSuperview];
+    if (progressView) {
+        [self addSubview:progressView];
+        [progressView setWebView:self];
+    }
 }
 
 @end
