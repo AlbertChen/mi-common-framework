@@ -10,21 +10,21 @@
 
 @implementation UISearchBar (CYAdditions)
 
-- (UITextField *)textFieldInView:(UIView *)view {
-    UITextField *textField = nil;
+- (UIView *)subviewWithClass:(Class)aClass inView:(UIView *)view {
+    UIView *result = nil;
     for (UIView *subview in view.subviews) {
-        if ([subview isKindOfClass:[UITextField class]]) {
-            textField = (UITextField *)subview;
+        if ([subview isKindOfClass:aClass]) {
+            result = subview;
             break;
         } else {
-            textField = [self textFieldInView:subview];
-            if (textField != nil) {
+            result = [self subviewWithClass:aClass inView:subview];
+            if (result != nil) {
                 break;
             }
         }
     }
     
-    return textField;
+    return result;
 }
 
 - (UITextField *)textField {
@@ -32,13 +32,18 @@
     if (@available(iOS 13.0, *)) {
         textField = self.searchTextField;
     } else {
-        textField = [self textFieldInView:self];
+        textField = (UITextField *)[self subviewWithClass:[UITextField class] inView:self];
     }
     return textField;
 }
 
 - (UIButton *)cancelButton {
-    UIButton *cancelButton = [self valueForKey:@"_cancelButton"];
+    UIButton *cancelButton = nil;
+    if (@available(iOS 13.0, *)) {
+        cancelButton = (UIButton *)[self subviewWithClass:[UIButton class] inView:self];
+    } else {
+        cancelButton = [self valueForKey:@"_cancelButton"];
+    }
     return cancelButton;
 }
 
