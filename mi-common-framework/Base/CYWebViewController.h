@@ -39,7 +39,7 @@
 @property (nonatomic, assign) CGFloat bottomMargin;
 @property (nonatomic, strong, readonly) WKWebView *webView;
 
-
+- (void)closeButtonPressed:(id)sender;
 - (void)showPhotoBrowserWithURL:(NSURL *)URL;
 
 @end
