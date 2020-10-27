@@ -7,6 +7,7 @@
 //
 
 #import "CYDatabaseStore.h"
+#import "CYLogger.h"
 
 #define FMDBQuickCheck(SomeBool) { if (!(SomeBool)) { NSLog(@"Failure on line %d", __LINE__); abort(); } }
 

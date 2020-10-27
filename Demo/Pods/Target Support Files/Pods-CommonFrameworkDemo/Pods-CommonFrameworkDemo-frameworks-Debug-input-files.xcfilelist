@@ -1,0 +1,11 @@
+${PODS_ROOT}/Target Support Files/Pods-CommonFrameworkDemo/Pods-CommonFrameworkDemo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CYCommonFramework/CYCommonFramework.framework
+${BUILT_PRODUCTS_DIR}/CYWebViewProgressView/CYWebViewProgressView.framework
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
+${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework
+${BUILT_PRODUCTS_DIR}/SZTextView/SZTextView.framework
+${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework

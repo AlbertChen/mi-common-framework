@@ -9,6 +9,7 @@
 #import "CYDataModel+FMDB.h"
 #import <objc/runtime.h>
 #import "CYDatabaseStore.h"
+#import "CYLogger.h"
 #import "NSString+FMDB.h"
 #import "NSDictionary+CYAdditions.h"
 

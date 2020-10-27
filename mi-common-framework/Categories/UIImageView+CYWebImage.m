@@ -7,6 +7,7 @@
 //
 
 #import "UIImageView+CYWebImage.h"
+#import "CYLogger.h"
 #import "Reachability+CYAdditions.h"
 
 static BOOL _downloadImageInWifiOnly = NO;

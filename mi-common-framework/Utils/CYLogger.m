@@ -7,8 +7,10 @@
 //
 
 #import "CYLogger.h"
+#import "CYConstants.h"
 #import "CYFilePathHelper.h"
 #import "NSDate+CYAdditions.h"
+#import "UIDevice+CYAdditions.h"
 
 /**
  If you set the log level to LOG_LEVEL_ERROR, then you will only see DDLogError statements.

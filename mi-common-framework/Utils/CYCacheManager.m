@@ -9,6 +9,7 @@
 #import "CYCacheManager.h"
 #import "CYFilePathHelper.h"
 #import "CYDatabaseStore.h"
+#import "CYLogger.h"
 #import "SDWebImageManager.h"
 
 NSString * const CYCacheManagerDidClearNotification = @"CYCacheManagerDidClearNotification";
