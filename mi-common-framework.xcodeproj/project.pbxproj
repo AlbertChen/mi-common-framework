@@ -229,7 +229,6 @@
 		DE7A381E1D6C3FCE00393FC8 /* CYImageDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYImageDisplayView.h; sourceTree = "<group>"; };
 		DE7A381F1D6C3FCE00393FC8 /* CYImageDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYImageDisplayView.m; sourceTree = "<group>"; };
 		DE7C9F1C1CFE88E100DCF6D1 /* mi-common-framework-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "mi-common-framework-Prefix.pch"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		DE7C9F1D1CFE88F600DCF6D1 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		DE9D99491F034533006CEB2A /* NSDictionary+CYAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+CYAdditions.h"; sourceTree = "<group>"; };
 		DE9D994A1F034533006CEB2A /* NSDictionary+CYAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+CYAdditions.m"; sourceTree = "<group>"; };
 		DEA61E4D1FA05E5700BFFB87 /* CYNotificationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYNotificationView.h; sourceTree = "<group>"; };
@@ -487,7 +486,6 @@
 		DE7C9F1B1CFE88A200DCF6D1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DE7C9F1D1CFE88F600DCF6D1 /* ReadMe.txt */,
 				DE7C9F1C1CFE88E100DCF6D1 /* mi-common-framework-Prefix.pch */,
 			);
 			name = "Supporting Files";
