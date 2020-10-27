@@ -25,13 +25,13 @@ static BOOL _downloadImageInWifiOnly = NO;
     [self setImageWithURLString:urlString placeholderImage:placeholder options:0];
 }
 
-- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletionBlock)completedBlock {
+- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder completed:(SDExternalCompletionBlock)completedBlock {
     [self setImageWithURLString:urlString placeholderImage:placeholder options:0 completed:completedBlock];
 }
 
 - (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options {
     __weak UIImageView *w_self = self;
-    SDWebImageCompletionBlock completedBlock = ^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    SDExternalCompletionBlock completedBlock = ^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (image != nil && cacheType == SDImageCacheTypeNone) {
             w_self.alpha = 0.0;
             [UIView animateWithDuration:0.15 animations:^{
@@ -45,7 +45,7 @@ static BOOL _downloadImageInWifiOnly = NO;
     [self setImageWithURLString:urlString placeholderImage:placeholder options:options completed:completedBlock];
 }
 
-- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletionBlock)completedBlock {
+- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDExternalCompletionBlock)completedBlock {
     NSString *newURLString = [urlString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSURL *url = [NSURL URLWithString:newURLString];
     if (url == nil) {
