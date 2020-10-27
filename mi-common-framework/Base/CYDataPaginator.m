@@ -50,7 +50,7 @@
 
 - (id)initWithDelegate:(id<CYDataPaginatorDelegate>)delegate
 {
-    self = [self init];
+    self = [super init];
     if (self) {
         self.delegate = delegate;
         @synchronized(self.objects){
