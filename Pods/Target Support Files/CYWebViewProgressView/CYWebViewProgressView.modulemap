@@ -1,0 +1,6 @@
+framework module CYWebViewProgressView {
+  umbrella header "CYWebViewProgressView-umbrella.h"
+
+  export *
+  module * { export * }
+}

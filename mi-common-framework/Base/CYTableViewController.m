@@ -25,7 +25,6 @@
         _noMoreDataLabel = [[UILabel alloc] initWithFrame:self.tableView.infiniteScrollingView.bounds];
         _noMoreDataLabel.text = NSLocalizedString(@"No more data",);
         _noMoreDataLabel.font = [UIFont boldSystemFontOfSize:14];
-        _noMoreDataLabel.backgroundColor = self.view.backgroundColor;
         _noMoreDataLabel.textColor = [UIColor darkGrayColor];
         _noMoreDataLabel.textAlignment = NSTextAlignmentCenter;
     }

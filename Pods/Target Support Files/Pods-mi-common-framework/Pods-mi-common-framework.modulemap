@@ -1,0 +1,6 @@
+framework module Pods_mi_common_framework {
+  umbrella header "Pods-mi-common-framework-umbrella.h"
+
+  export *
+  module * { export * }
+}

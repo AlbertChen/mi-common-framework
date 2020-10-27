@@ -14,10 +14,10 @@
 + (void)setDownloadImageInWifiOnly:(BOOL)wifiOnly;
 
 - (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder;
-- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder completed:(SDExternalCompletionBlock)completedBlock;
 
 // Download with options
 - (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options;
-- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)setImageWithURLString:(NSString *)urlString placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options completed:(SDExternalCompletionBlock)completedBlock;
 
 @end

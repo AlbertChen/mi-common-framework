@@ -103,7 +103,7 @@
     if ([self.webView canGoBack]) {
         [self.webView goBack];
     } else {
-        [self dismiss:YES];
+        [self closeButtonPressed:sender];
     }
 }
 

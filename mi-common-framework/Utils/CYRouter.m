@@ -71,7 +71,7 @@
 
 - (UIViewController *)viewControllerInNavigationStack:(Class)controllerClass {
     NSArray *viewControllers = self.currentViewController.navigationController.viewControllers;
-    int count = viewControllers.count;
+    NSInteger count = viewControllers.count;
     for (int i = 0; i < count; i++) {
         UIViewController *viewController = viewControllers[count - 1 - i];
         if ([viewController isKindOfClass:controllerClass]) {
