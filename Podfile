@@ -16,10 +16,10 @@ target 'mi-common-framework' do
     pod 'TTTAttributedLabel', '~> 2.0.0'
     
 #    pod 'CYAlertController', :git => 'https://github.com/AlbertChen/CYAlertController.git'
-#    pod 'CYLabel', :git => 'https://github.com/AlbertChen/CYLabel.git'
+#    pod 'CYLabel'
 #    pod 'CYImageInfiniteSlideView'
-#    pod 'CYMessageView', :git => 'https://github.com/AlbertChen/CYMessageView.git'
-#    pod 'CYPageSlideController', :git => 'https://github.com/AlbertChen/CYPageSlideController.git'
+#    pod 'CYMessageView'
+#    pod 'CYPageSlideController'
 #    pod 'CYSecurity'
-    pod 'CYWebViewProgressView', :git => 'https://github.com/AlbertChen/CYWebViewProgressView.git'
+    pod 'CYWebViewProgressView'
 end

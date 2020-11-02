@@ -8,6 +8,7 @@
 
 #import "UILabel+CYAddtions.h"
 #import <objc/runtime.h>
+#import "CYLogger.h"
 
 @implementation UILabel (Addtions)
 

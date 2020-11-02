@@ -1,0 +1,116 @@
+PODS:
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
+  - CYCommonFramework (2.0.0):
+    - CocoaLumberjack
+    - CYCommonFramework/Base (= 2.0.0)
+    - CYCommonFramework/Categories (= 2.0.0)
+    - CYCommonFramework/Model (= 2.0.0)
+    - CYCommonFramework/Utils (= 2.0.0)
+    - CYCommonFramework/Widgets (= 2.0.0)
+    - CYWebViewProgressView
+    - FMDB (~> 2.6.2)
+    - MBProgressHUD (~> 1.0.0)
+    - Reachability (~> 3.2)
+    - SDWebImage (~> 4.0)
+    - SVPullToRefresh (~> 0.4.1)
+    - SZTextView (~> 1.3.0)
+    - TTTAttributedLabel (~> 2.0.0)
+  - CYCommonFramework/Base (2.0.0):
+    - CocoaLumberjack
+    - CYWebViewProgressView
+    - FMDB (~> 2.6.2)
+    - MBProgressHUD (~> 1.0.0)
+    - Reachability (~> 3.2)
+    - SDWebImage (~> 4.0)
+    - SVPullToRefresh (~> 0.4.1)
+    - SZTextView (~> 1.3.0)
+    - TTTAttributedLabel (~> 2.0.0)
+  - CYCommonFramework/Categories (2.0.0):
+    - CocoaLumberjack
+    - CYWebViewProgressView
+    - FMDB (~> 2.6.2)
+    - MBProgressHUD (~> 1.0.0)
+    - Reachability (~> 3.2)
+    - SDWebImage (~> 4.0)
+    - SVPullToRefresh (~> 0.4.1)
+    - SZTextView (~> 1.3.0)
+    - TTTAttributedLabel (~> 2.0.0)
+  - CYCommonFramework/Model (2.0.0):
+    - CocoaLumberjack
+    - CYWebViewProgressView
+    - FMDB (~> 2.6.2)
+    - MBProgressHUD (~> 1.0.0)
+    - Reachability (~> 3.2)
+    - SDWebImage (~> 4.0)
+    - SVPullToRefresh (~> 0.4.1)
+    - SZTextView (~> 1.3.0)
+    - TTTAttributedLabel (~> 2.0.0)
+  - CYCommonFramework/Utils (2.0.0):
+    - CocoaLumberjack
+    - CYWebViewProgressView
+    - FMDB (~> 2.6.2)
+    - MBProgressHUD (~> 1.0.0)
+    - Reachability (~> 3.2)
+    - SDWebImage (~> 4.0)
+    - SVPullToRefresh (~> 0.4.1)
+    - SZTextView (~> 1.3.0)
+    - TTTAttributedLabel (~> 2.0.0)
+  - CYCommonFramework/Widgets (2.0.0):
+    - CocoaLumberjack
+    - CYWebViewProgressView
+    - FMDB (~> 2.6.2)
+    - MBProgressHUD (~> 1.0.0)
+    - Reachability (~> 3.2)
+    - SDWebImage (~> 4.0)
+    - SVPullToRefresh (~> 0.4.1)
+    - SZTextView (~> 1.3.0)
+    - TTTAttributedLabel (~> 2.0.0)
+  - CYWebViewProgressView (0.0.1)
+  - FMDB (2.6.2):
+    - FMDB/standard (= 2.6.2)
+  - FMDB/standard (2.6.2)
+  - MBProgressHUD (1.0.0)
+  - Reachability (3.2)
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
+  - SVPullToRefresh (0.4.1)
+  - SZTextView (1.3.0)
+  - TTTAttributedLabel (2.0.0)
+
+DEPENDENCIES:
+  - CYCommonFramework (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - CocoaLumberjack
+    - CYWebViewProgressView
+    - FMDB
+    - MBProgressHUD
+    - Reachability
+    - SDWebImage
+    - SVPullToRefresh
+    - SZTextView
+    - TTTAttributedLabel
+
+EXTERNAL SOURCES:
+  CYCommonFramework:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  CYCommonFramework: f754b14b74b65e67be555ab5d9d75c60121c1656
+  CYWebViewProgressView: cd5832e6239d5bb9c343212fbb07e9800d62a6f2
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+
+PODFILE CHECKSUM: 3faee5cf3f4e6fa1007109888c8329ba34dbaffa
+
+COCOAPODS: 1.9.1

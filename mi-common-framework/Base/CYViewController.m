@@ -7,6 +7,7 @@
 //
 
 #import "CYViewController.h"
+#import "CYConstants.h"
 #import "UIBarButtonItem+CYAdditions.h"
 
 @interface CYViewController ()

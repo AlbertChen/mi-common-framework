@@ -7,6 +7,7 @@
 //
 
 #import "CYTableViewController.h"
+#import "CYConstants.h"
 
 #define AUTO_REFRESH_INTERVAL   30 * 60 // 默认自动刷新时间
 

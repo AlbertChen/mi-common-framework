@@ -17,7 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack
-  - CYWebViewProgressView (from `https://github.com/AlbertChen/CYWebViewProgressView.git`)
+  - CYWebViewProgressView
   - FMDB (~> 2.6.2)
   - MBProgressHUD (~> 1.0.0)
   - Reachability (~> 3.2)
@@ -29,6 +29,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - CocoaLumberjack
+    - CYWebViewProgressView
     - FMDB
     - MBProgressHUD
     - Reachability
@@ -36,15 +37,6 @@ SPEC REPOS:
     - SVPullToRefresh
     - SZTextView
     - TTTAttributedLabel
-
-EXTERNAL SOURCES:
-  CYWebViewProgressView:
-    :git: https://github.com/AlbertChen/CYWebViewProgressView.git
-
-CHECKOUT OPTIONS:
-  CYWebViewProgressView:
-    :commit: fce467a474cebd6845b9c33e56e715189673cffd
-    :git: https://github.com/AlbertChen/CYWebViewProgressView.git
 
 SPEC CHECKSUMS:
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
@@ -57,6 +49,6 @@ SPEC CHECKSUMS:
   SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: cdfa29ad77ac92ed210a1e763f53dd49d2a35280
+PODFILE CHECKSUM: a78a48367e7d16651356d2b704ad43be98b018f5
 
 COCOAPODS: 1.9.1
