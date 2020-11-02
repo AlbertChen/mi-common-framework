@@ -112,7 +112,11 @@
 }
 
 - (IBAction)stateViewTapped:(CYStateViewState)type {
-    [self loadRequestItem:self.requestItem];
+    if (self.webView.canGoBack) {
+        [self.webView reload];
+    } else {
+        [self loadRequestItem:self.requestItem];
+    }
 }
 
 // URL schema: img://onclick?src=xxx&srcs=xxx,xxx...
@@ -214,7 +218,8 @@
 
     NSString *failingURLString = [error.userInfo valueForKey:NSURLErrorFailingURLStringErrorKey];
     NSString *targetURLString = webView.URL.absoluteString.length > 0 ?  webView.URL.absoluteString : [self.requestItem URLString];
-    if ([failingURLString isEqualToString:targetURLString]) {
+    if ([failingURLString isEqualToString:targetURLString] ||
+        [failingURLString isEqualToString:[targetURLString stringByAppendingString:@"/"]]) {
         self.stateView.state = CYStateViewStateError;
     }
     
