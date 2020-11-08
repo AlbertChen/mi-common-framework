@@ -31,28 +31,11 @@
 }
 
 - (BOOL)isSeparatorHidden {
-    UIImageView *lineView = [self findSeparatorFromView:self];
-    return lineView.hidden;
+    return self.shadowImage != nil;
 }
 
 - (void)setSeparatorHidden:(BOOL)separatorHidden {
-    UIImageView *lineView = [self findSeparatorFromView:self];
-    lineView.hidden = separatorHidden;
-}
-
-- (UIImageView *)findSeparatorFromView:(UIView *)view {
-    if ([view isKindOfClass:[UIImageView class]] && view.frame.size.height <= 2.0) {
-        return (UIImageView *)view;
-    }
-    
-    for (UIView *subView in view.subviews) {
-        UIImageView *imageView = [self findSeparatorFromView:subView];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    
-    return nil;
+    self.shadowImage = separatorHidden ? [UIImage new] : nil;
 }
 
 @end
