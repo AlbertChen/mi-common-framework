@@ -60,10 +60,13 @@
 
 - (NSString *)stringWithDecimalDigits:(NSUInteger)digits shrinkTimes:(NSInteger)shrinkTimes {
     NSString *format = [[NSString alloc] initWithFormat:@"%@%d%@", @"%.0", (int)digits, @"f"];
-    CGFloat num = self.floatValue;
+    double num = self.doubleValue;
     if (shrinkTimes != 0) {
         num = num / shrinkTimes;
     }
+    
+    double times = pow(10, digits);
+    num = round(num * times) / times;
     NSString *result = [NSString stringWithFormat:format, num];
     
     return result;
@@ -80,18 +83,13 @@
         num = num / shrinkTimes;
     }
     
-    if (digits == 0) {
-        result = @((NSInteger)num).stringValue;
+    double times = pow(10, digits);
+    if (num < 0) {
+        num = ceil(num * times) / times;
     } else {
-        double times = pow(10, digits);
-        if (num < 0) {
-            num = ceil(times * num) / times;
-        } else {
-            num = floor(times * num) / times;
-        }
-        
-        result = [@(num) stringWithDecimalDigits:digits];
+        num = floor(num * times) / times;
     }
+    result = [@(num) stringWithDecimalDigits:digits];
     
     return result;
 }
