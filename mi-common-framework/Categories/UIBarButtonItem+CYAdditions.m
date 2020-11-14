@@ -38,7 +38,7 @@
 }
 
 + (UIBarButtonItem *)customItemWithImage:(id)image target:(id)target selector:(SEL)selector {
-    return [[self class]customItemWithImage:image selectedImage:nil target:target selector:selector];
+    return [[self class] customItemWithImage:image selectedImage:nil target:target selector:selector];
 }
 
 + (UIBarButtonItem *)customItemWithImage:(id)image selectedImage:(id)selectedImage target:(id)target selector:(SEL)selector {
