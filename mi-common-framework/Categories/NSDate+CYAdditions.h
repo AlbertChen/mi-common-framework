@@ -14,6 +14,10 @@ extern NSString * const CYDateFormatDateAndTime; // yyyy-MM-dd HH:mm
 extern NSString * const CYDateFormatTimestamp; // yyyy-MM-dd HH:mm:ss
 extern NSString * const CYDateFormatISO8601; // yyyy-MM-dd'T'HH:mm:ss.SSSZ
 
+extern NSString * const CYDateFormatShortDate; // MM-dd
+extern NSString * const CYDateFormatShortTime; // HH:mm
+extern NSString * const CYDateFormatShortDateAndTime; // MM-dd HH:mm
+
 @interface NSDate (CYAdditons)
 
 + (NSDate *)dateFromString:(NSString *)string;
